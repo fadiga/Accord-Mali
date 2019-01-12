@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="476dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/hand_der_fatima"
+        tools:layout_editor_absoluteY="4dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.50"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="29dp">
+
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BootstrapButton"
+                app:bootstrapBrand="success"
+                app:bootstrapSize="lg"
+                app:fontAwesomeIcon="fa_anchor"
+                android:src="@drawable/hand_der_fatima"
+                app:showOutline="false"
+                app:roundedCorners="true"
+                android:layout_weight="0.50"
+                />
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BootstrapButton"
+                app:bootstrapBrand="success"
+                app:bootstrapSize="lg"
+                app:fontAwesomeIcon="fa_anchor"
+                android:src="@drawable/hand_der_fatima"
+                app:showOutline="false"
+                app:roundedCorners="true"
+                android:layout_weight="0.50"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.50"
+            android:src="@drawable/hand_der_fatima"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="364dp">
+
+
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BootstrapButton"
+                app:bootstrapBrand="success"
+                app:bootstrapSize="lg"
+                app:fontAwesomeIcon="fa_anchor"
+                android:src="@drawable/hand_der_fatima"
+                app:showOutline="false"
+                app:roundedCorners="true"
+                android:layout_weight="0.50"
+                />
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BootstrapButton"
+                app:bootstrapBrand="success"
+                app:bootstrapSize="lg"
+                app:fontAwesomeIcon="fa_anchor"
+                android:src="@drawable/hand_der_fatima"
+                app:showOutline="false"
+                app:roundedCorners="true"
+                android:layout_weight="0.50"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="77dp"
+        android:text="@string/title"
+        android:textAlignment="center"
+        tools:ignore="MissingConstraints"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp" />
+
+
+</android.support.constraint.ConstraintLayout>
