@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Accord-Droid</string>
-    <string name="title">ACCORD POUR LA PAIX ET LA RECONCILIATION AU MALI ISSU DU PROCESSUS D’ALGER</string>
-
+    <string name="title">ACCORD POUR LA PAIX \n ET LA RECONCILIATION AU MALI \n ISSU DU PROCESSUS D’ALGER</string>
+    <string name="ok">OK</string>
+    <string name="error_field_empty">error_field_empty</string>
+    <string name="label_tmpl">Paramètre de langue</string>
+    <string name="languages">langues</string>
+    <string name="menu_settings">Configuration</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="cancel">Annuler</string>
 </resources>

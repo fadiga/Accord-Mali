@@ -1,114 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     tools:context=".Home">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="476dp"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/hand_der_fatima"
-        tools:layout_editor_absoluteY="4dp" />
 
+    <Button
+        android:id="@+id/setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/menu" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints">
+        android:layout_height="5dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.50"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="29dp">
+            android:background="#008723" />
 
-            <com.beardedhen.androidbootstrap.BootstrapButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BootstrapButton"
-                app:bootstrapBrand="success"
-                app:bootstrapSize="lg"
-                app:fontAwesomeIcon="fa_anchor"
-                android:src="@drawable/hand_der_fatima"
-                app:showOutline="false"
-                app:roundedCorners="true"
-                android:layout_weight="0.50"
-                />
-            <com.beardedhen.androidbootstrap.BootstrapButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BootstrapButton"
-                app:bootstrapBrand="success"
-                app:bootstrapSize="lg"
-                app:fontAwesomeIcon="fa_anchor"
-                android:src="@drawable/hand_der_fatima"
-                app:showOutline="false"
-                app:roundedCorners="true"
-                android:layout_weight="0.50"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="0.50"
-            android:src="@drawable/hand_der_fatima"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="364dp">
+            android:background="#ff9409" />
 
-
-            <com.beardedhen.androidbootstrap.BootstrapButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BootstrapButton"
-                app:bootstrapBrand="success"
-                app:bootstrapSize="lg"
-                app:fontAwesomeIcon="fa_anchor"
-                android:src="@drawable/hand_der_fatima"
-                app:showOutline="false"
-                app:roundedCorners="true"
-                android:layout_weight="0.50"
-                />
-            <com.beardedhen.androidbootstrap.BootstrapButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BootstrapButton"
-                app:bootstrapBrand="success"
-                app:bootstrapSize="lg"
-                app:fontAwesomeIcon="fa_anchor"
-                android:src="@drawable/hand_der_fatima"
-                app:showOutline="false"
-                app:roundedCorners="true"
-                android:layout_weight="0.50"
-                />
-
-        </LinearLayout>
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.50"
+            android:background="#9c0600" />
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:src="@drawable/hand_der_fatima" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
         android:layout_marginTop="77dp"
+        android:shadowColor="#D38918"
         android:text="@string/title"
         android:textAlignment="center"
-        tools:ignore="MissingConstraints"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="0dp" />
+        android:textColor="#3D3D3D"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="0.50"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="0.50"
+            android:background="#cfcfcf"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="0.50"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="29dp">
+
+                <Button
+                    android:id="@+id/readButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.50"
+                    android:background="#008723"
+                    android:bottomLeftRadius="180dp"
+                    android:bottomRightRadius="180dp"
+                    android:drawableTop="@drawable/readbook"
+                    android:paddingTop="20dp"
+                    android:text="Lecture"
+                    android:textColor="#fff"
+                    android:topLeftRadius="180dp"
+                    android:topRightRadius="180dp" />
+
+                <Button
+                    android:id="@+id/quizButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.50"
+                    android:background="#ff9409"
+                    android:bottomLeftRadius="180dp"
+                    android:bottomRightRadius="180dp"
+                    android:drawableTop="@drawable/quiz"
+                    android:paddingTop="20dp"
+                    android:text="Quiz"
+                    android:textColor="#fff"
+                    android:topLeftRadius="180dp"
+                    android:topRightRadius="180dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="0.50"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="364dp">
+
+                <Button
+                    android:id="@+id/historyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.50"
+                    android:background="#9c0600"
+                    android:bottomLeftRadius="180dp"
+                    android:bottomRightRadius="180dp"
+                    android:drawableTop="@drawable/history"
+                    android:paddingTop="20dp"
+                    android:text="Historique"
+                    android:textColor="#fff"
+                    android:topLeftRadius="180dp"
+                    android:topRightRadius="180dp" />
+
+                <Button
+                    android:id="@+id/aboutButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.50"
+                    android:background="#058CF0"
+                    android:bottomLeftRadius="80dp"
+                    android:bottomRightRadius="10dp"
+                    android:drawableTop="@drawable/about"
+                    android:paddingTop="20dp"
+                    android:text="À propos"
+                    android:textColor="#fff"
+                    android:topLeftRadius="80dp"
+                    android:topRightRadius="180dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

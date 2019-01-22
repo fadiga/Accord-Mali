@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReadView">
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp">
+
+
+    </com.github.barteksc.pdfviewer.PDFView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/nextBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/prev1Btn"
+            android:background="@drawable/next"
+            android:gravity="end"
+            android:onClick="nextPage" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|start"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/prev1Btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/prev"
+            android:gravity="start"
+            android:onClick="prevPage" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pdfView"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/zoom_p"
+            android:onClick="zoomIn" />
+
+        <ImageButton
+            android:id="@+id/button4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/zoom_m"
+            android:onClick="zoomOut" />
+    </LinearLayout>
+
+</RelativeLayout>
