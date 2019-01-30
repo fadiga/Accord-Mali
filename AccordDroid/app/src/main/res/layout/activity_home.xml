@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#747272"
+    android:background="#fff"
     tools:context=".Home">
 
     <Button
@@ -17,33 +17,6 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="5dp">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.50"
-            android:background="#008723" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.50"
-            android:background="#ff9409" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="0.50"
-            android:background="#9c0600" />
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="false"
-        android:src="@drawable/hand_der_fatima" />
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -53,22 +26,21 @@
             android:layout_alignParentBottom="true"
             android:layout_weight="0.50"
             android:orientation="vertical"
-            tools:ignore="MissingConstraints">
-
+            tools:ignore="MissingConstraints"
+            android:background="@drawable/hand_der_fatima">
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:shadowColor="#fff"
-                android:text="@string/title"
                 android:shadowDx="1"
                 android:shadowDy="2"
                 android:shadowRadius="2"
-                android:gravity="center"
+                android:text="@string/title"
                 android:textAlignment="center"
                 android:textColor="#0A0A0A"
-                android:textSize="24sp"
-                tools:ignore="MissingConstraints" />
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout

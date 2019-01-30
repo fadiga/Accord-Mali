@@ -8,6 +8,9 @@ public class QuizActivity extends Base {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_home);
-//        setupUI();
+        setupUI();
+    }
+
+    private void setupUI() {
     }
 }
