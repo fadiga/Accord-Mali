@@ -1,11 +1,15 @@
 package ml.unicef.accord_droid;
 
+import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.design.widget.TextInputEditText;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.github.barteksc.pdfviewer.PDFView;
 
@@ -18,6 +22,8 @@ public class ReadActivity extends Base {
     public PDFView pdfView;
     public float zoomValue = 1;
     public SharedPreferences sharedPrefs;
+    public Button bttSearch;
+    public TextInputEditText textSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +32,7 @@ public class ReadActivity extends Base {
 
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         String language = sharedPrefs.getString(Constants.LANGUAGE, "");
+        Boolean readMode = sharedPrefs.getBoolean(Constants.MODE_READ, false);
         int pageRead = sharedPrefs.getInt(Constants.PAGE_NB, 0);
         pdfView = (PDFView) findViewById(R.id.pdfView);
         language = language + ".pdf";
@@ -35,27 +42,14 @@ public class ReadActivity extends Base {
                 .swipeHorizontal(true)
                 .enableDoubletap(true)
                 .defaultPage(pageRead)
-//                .onPageChange(true)
-                // allows to draw something on the current page, usually visible in the middle of the screen
-//                .onDraw(onDrawListener)
-                // allows to draw something on all pages, separately for every page. Called only for visible pages
-//                .onDrawAll(onDrawListener)
-//                .onLoad(onLoadCompleteListener) // called after document is loaded and starts to be rendered
-//                .onPageChange(onPageChangeListener)
-//                .onPageScroll(onPageScrollListener)
-//                .onError(onErrorListener)
-//                .onPageError(onPageErrorListener)
-//                .onRender(onRenderListener) // called after document is rendered for the first time
-                // called on single tap, return true if handled, false to toggle scroll handle visibility
-//                .onTap(onTapListener)
                 .enableAnnotationRendering(true) // render annotations (such as comments, colors or forms)
                 .password(null)
                 .scrollHandle(null)
                 .enableAntialiasing(true) // improve rendering a little bit on low-res screens
-                // spacing between pages in dp. To define spacing color, set view background
-                .invalidPageColor(Color.BLUE) // color
+                .nightMode(readMode)
+                .enableAntialiasing(true)
+                .pageSnap(true)
                 .load();
-        pdfView.findViewWithTag("");
     }
 
     public void nextPage(View view) {
@@ -75,8 +69,25 @@ public class ReadActivity extends Base {
         editor.apply();
     }
 
-    public void search(View view){
-        pdfView.findViewWithTag();
+    public void searchInPage(View view){
+
+        final Dialog searchDialog = new Dialog(ReadActivity.this);
+        searchDialog.setContentView(R.layout.reach_dialogue);
+//        settingdialog.setTitle("Paramètre de langue");
+        searchDialog.show();
+        bttSearch =  searchDialog.findViewById(R.id.bttSearch);
+        bttSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                textSearch = searchDialog.findViewById(R.id.testSearch);
+                Log.i(TAG, textSearch.getText().toString());
+//                pdfView.SearchText()
+                pdfView.findViewWithTag(textSearch.getText().toString());
+                searchDialog.dismiss();
+
+            }
+        });
+
 
     }
     public void zoomIn(View view) {

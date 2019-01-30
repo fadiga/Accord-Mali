@@ -48,9 +48,7 @@ public class Base extends Activity {
     String l12 = "Bogon";
     String l13 = "Malinke";
     String l14 = "Khasonke";
-    public Button readButton;
 
-//    private Button settingButton;
     private Button btnCancel;
     private Button saveButton;
     private Spinner spinner;

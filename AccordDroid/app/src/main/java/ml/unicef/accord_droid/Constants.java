@@ -7,6 +7,7 @@ package ml.unicef.accord_droid;
 
 public class Constants {
 
+    static String MODE_READ = "read_mode";
     static String l1 = "Français";
     static String l3 = "Bambara";
     static String l4 = "Fulfulde";

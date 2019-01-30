@@ -4,18 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReadView">
+    tools:context=".ReadActivity">
 
     <com.github.barteksc.pdfviewer.PDFView
         android:id="@+id/pdfView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="10dp">
-
-
+        android:layout_marginBottom="1dp">
     </com.github.barteksc.pdfviewer.PDFView>
 
 
+    <ImageButton
+        android:id="@+id/search"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:drawable/ic_search_category_default"
+        android:onClick="searchInPage" />
+
+    <!--<EditText-->
+        <!--android:id="@+id/search"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:inputType="text"-->
+        <!--android:imeOptions="actionSearch"-->
+        <!--android:background="@android:drawable/ic_search_category_default"-->
+        <!--android:gravity="left" />-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
