@@ -21,17 +21,17 @@ public class Home extends Base {
         setContentView(R.layout.activity_home);
         Log.d(TAG, "onCreate Home");
 
-        settingButton = (Button)findViewById(R.id.setting);
+        settingButton = findViewById(R.id.setting);
         settingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 dialogueSettings();
             }
         });
-        readButton = (Button) findViewById(R.id.readButton);
-        quizButton = (Button) findViewById(R.id.quizButton);
-        historyButton = (Button) findViewById(R.id.historyButton);
-        aboutButton = (Button) findViewById(R.id.aboutButton);
+        readButton = findViewById(R.id.readButton);
+        quizButton = findViewById(R.id.quizButton);
+        historyButton = findViewById(R.id.historyButton);
+        aboutButton = findViewById(R.id.aboutButton);
             readButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {

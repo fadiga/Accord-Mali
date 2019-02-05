@@ -22,21 +22,24 @@ public class ReadActivity extends Base {
     public PDFView pdfView;
     public float zoomValue = 1;
     public SharedPreferences sharedPrefs;
-    public Button bttSearch;
+    public boolean readMode;
     public TextInputEditText textSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pdf_reader);
-
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        readMode = sharedPrefs.getBoolean(Constants.MODE_READ, true);
+        loadPDF(readMode);
+    }
+
+    public void loadPDF(Boolean modeRead) {
         String language = sharedPrefs.getString(Constants.LANGUAGE, "");
-        Boolean readMode = sharedPrefs.getBoolean(Constants.MODE_READ, false);
+        pdfView = findViewById(R.id.pdfView);
         int pageRead = sharedPrefs.getInt(Constants.PAGE_NB, 0);
-        pdfView = (PDFView) findViewById(R.id.pdfView);
-        language = language + ".pdf";
-        pdfView.fromAsset(language)
+
+        pdfView.fromAsset(language + ".pdf")
                 .spacing(10)
                 .enableSwipe(true) // allows to block changing pages using swipe
                 .swipeHorizontal(true)
@@ -46,16 +49,14 @@ public class ReadActivity extends Base {
                 .password(null)
                 .scrollHandle(null)
                 .enableAntialiasing(true) // improve rendering a little bit on low-res screens
-                .nightMode(readMode)
+                .nightMode(modeRead)
                 .enableAntialiasing(true)
                 .pageSnap(true)
                 .load();
     }
 
     public void nextPage(View view) {
-
         pdfView.jumpTo(pdfView.getCurrentPage() + 1, true);
-
         final SharedPreferences.Editor editor = sharedPrefs.edit();
         editor.putInt(Constants.PAGE_NB, pdfView.getCurrentPage());
         editor.apply();
@@ -69,27 +70,36 @@ public class ReadActivity extends Base {
         editor.apply();
     }
 
-    public void searchInPage(View view){
-
-        final Dialog searchDialog = new Dialog(ReadActivity.this);
-        searchDialog.setContentView(R.layout.reach_dialogue);
-//        settingdialog.setTitle("Paramètre de langue");
-        searchDialog.show();
-        bttSearch =  searchDialog.findViewById(R.id.bttSearch);
-        bttSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                textSearch = searchDialog.findViewById(R.id.testSearch);
-                Log.i(TAG, textSearch.getText().toString());
-//                pdfView.SearchText()
-                pdfView.findViewWithTag(textSearch.getText().toString());
-                searchDialog.dismiss();
-
-            }
-        });
-
-
+    public  void changeMode(View view){
+        boolean mode = true;
+        readMode = sharedPrefs.getBoolean(Constants.MODE_READ, true);
+        if (readMode == true) { mode = false; }
+        final SharedPreferences.Editor editor = sharedPrefs.edit();
+        editor.putBoolean(Constants.MODE_READ, mode);
+        editor.apply();
+        loadPDF(mode);
     }
+
+//    public void searchInPage(View view){
+//
+//        final Dialog searchDialog = new Dialog(ReadActivity.this);
+//        searchDialog.setContentView(R.layout.reach_dialogue);
+////        settingdialog.setTitle("Paramètre de langue");
+//        searchDialog.show();
+//        readMode =  searchDialog.findViewById(R.id.bttSearch);
+//        readMode.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View arg0) {
+//                textSearch = searchDialog.findViewById(R.id.testSearch);
+//                Log.i(TAG, textSearch.getText().toString());
+////                pdfView.SearchText()
+//                pdfView.findViewWithTag(textSearch.getText().toString());
+//                searchDialog.dismiss();
+//
+//            }
+//        })
+//    }
+
     public void zoomIn(View view) {
         ++zoomValue;
         pdfView.zoomTo(zoomValue);

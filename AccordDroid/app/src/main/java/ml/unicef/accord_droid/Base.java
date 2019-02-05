@@ -1,32 +1,22 @@
 package ml.unicef.accord_droid;
 
-import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by fad on 04/01/19.
@@ -35,27 +25,12 @@ public class Base extends Activity {
 
     private final static String TAG = "BASELog-BaseActivity";
 
-    String l1 = "Français";
-    String l3 = "Bambara";
-    String l4 = "Fulfulde";
-    String l5 = "Songhoi";
-    String l6 = "Tamacheq";
-    String l7 = "Bomu";
-    String l8 = "Mamara";
-    String l9 = "Shennara";
-    String l10 = "Soninke";
-    String l11 = "Bozo";
-    String l12 = "Bogon";
-    String l13 = "Malinke";
-    String l14 = "Khasonke";
-
     private Button btnCancel;
     private Button saveButton;
     private Spinner spinner;
 
     public SharedPreferences sharedPrefs;
 
-    final String[] languages = new String[] { l1, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14 };
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
@@ -73,9 +48,9 @@ public class Base extends Activity {
         settingdialog.setContentView(R.layout.add_preference);
         settingdialog.setTitle("Paramètre de langue");
         settingdialog.show();
-        spinner = (Spinner)settingdialog.findViewById(R.id.spinner);
-        btnCancel = (Button)settingdialog.findViewById(R.id.cancelButton);
-        saveButton = (Button)settingdialog.findViewById(R.id.saveButton);
+        spinner = settingdialog.findViewById(R.id.spinner);
+        btnCancel = settingdialog.findViewById(R.id.cancelButton);
+        saveButton = settingdialog.findViewById(R.id.saveButton);
 
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         String language = sharedPrefs.getString(Constants.LANGUAGE, "");
@@ -103,6 +78,7 @@ public class Base extends Activity {
                 settingdialog.dismiss();
             }
         });
+
     }
 //    public void SetAlarm(final Activity activity) {
 //        BroadcastReceiver receiver = new BroadcastReceiver() {
