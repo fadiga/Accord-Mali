@@ -24,6 +24,7 @@ public class ReadActivity extends Base {
     public SharedPreferences sharedPrefs;
     public boolean readMode;
     public TextInputEditText textSearch;
+    private View modeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class ReadActivity extends Base {
         setContentView(R.layout.pdf_reader);
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         readMode = sharedPrefs.getBoolean(Constants.MODE_READ, true);
+
         loadPDF(readMode);
     }
 
@@ -39,8 +41,16 @@ public class ReadActivity extends Base {
         pdfView = findViewById(R.id.pdfView);
         int pageRead = sharedPrefs.getInt(Constants.PAGE_NB, 0);
 
+        readMode = sharedPrefs.getBoolean(Constants.MODE_READ, true);
+        modeButton =  findViewById(R.id.mode_read);
+        if (readMode){
+            modeButton.setBackgroundResource(R.drawable.moon);
+        } else {
+            modeButton.setBackgroundResource(R.drawable.sun);
+        }
+
         pdfView.fromAsset(language + ".pdf")
-                .spacing(10)
+                .spacing(0)
                 .enableSwipe(true) // allows to block changing pages using swipe
                 .swipeHorizontal(true)
                 .enableDoubletap(true)
@@ -71,13 +81,10 @@ public class ReadActivity extends Base {
     }
 
     public  void changeMode(View view){
-        boolean mode = true;
-        readMode = sharedPrefs.getBoolean(Constants.MODE_READ, true);
-        if (readMode == true) { mode = false; }
         final SharedPreferences.Editor editor = sharedPrefs.edit();
-        editor.putBoolean(Constants.MODE_READ, mode);
+        editor.putBoolean(Constants.MODE_READ, !readMode);
         editor.apply();
-        loadPDF(mode);
+        loadPDF(!readMode);
     }
 
 //    public void searchInPage(View view){

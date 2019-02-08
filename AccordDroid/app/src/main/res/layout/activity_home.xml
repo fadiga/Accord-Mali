@@ -9,7 +9,7 @@
 
     <Button
         android:id="@+id/setting"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
@@ -33,13 +33,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:shadowColor="#fff"
+                android:shadowColor="#0A0A0A"
                 android:shadowDx="1"
                 android:shadowDy="2"
                 android:shadowRadius="2"
                 android:text="@string/title"
                 android:textAlignment="center"
-                android:textColor="#0A0A0A"
+                android:textColor="#fff"
                 android:textSize="24sp" />
         </LinearLayout>
 

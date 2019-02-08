@@ -15,6 +15,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -80,6 +84,31 @@ public class Base extends Activity {
         });
 
     }
+        public String loadJSONFromAsset() {
+            String json = null;
+            try {
+
+                InputStream is = getAssets().open("quiz.json");
+
+                int size = is.available();
+
+                byte[] buffer = new byte[size];
+
+                is.read(buffer);
+
+                is.close();
+
+                json = new String(buffer, "UTF-8");
+
+
+            } catch (IOException ex) {
+                ex.printStackTrace();
+                return null;
+            }
+            return json;
+
+        }
+
 //    public void SetAlarm(final Activity activity) {
 //        BroadcastReceiver receiver = new BroadcastReceiver() {
 //            @Override public void onReceive( Context context, Intent _ ) {

@@ -1,0 +1,53 @@
+{"l1" : [{
+        "Q1": {
+            "responses": [true, false, true, false],
+            "choises": ["A", "B", "C", "D"],
+            "type": 2,
+            "label": "Qui était sur la table de négociation ?"
+           },
+        "Q2": {
+            "responses": 4,
+            "choises": ["Article 2", "Article 3 ", "Article 1", "Article 5"],
+            "type": 1,
+            "label": "la création des conditions d'une paix au Mali,contribuant à la stabilité sous régionale ,ainsi qu'a la sécurité internationale est préciser dans quel article ?"
+           },
+        "Q3": {
+            "responses": [true, false, true, false],
+            "choises": ["MOC", "UNICEF", "MINUSMA", "DNDS"],
+            "type": 2,
+            "label": "les force armées et de sécurité reconstituées se rédéployeront, de manière progressive à compté de la signature d'accord ,sur l'ensemble des régions du nord. ce rédéploiement s'effectuera sous la conduite de qui?"
+           },
+        "Q4": {
+            "responses": 4,
+            "choises": ["A", "B", "C", "Ddsdfdsfdsf"],
+            "type": 1,
+            "label": "cdjjjdjn ?"
+           },
+        "Q5": {
+            "responses": 4,
+            "choises": ["A", "B", "C", "D"],
+            "type": 1,
+            "label": "ssss ?"
+           }
+       }],
+       "l2" : [{
+        "Q1": {
+            "responses": [true, false, false, false],
+            "choises": ["A", "B", "C", "D"],
+            "type": 2,
+            "label": ""
+           },
+        "Q2": {
+            "responses": 3,
+            "choises": ["A", "B", "C", "D"],
+            "type": 1,
+            "label": ""
+           },
+        "Q3": {
+            "responses": 0,
+            "choises": ["A", "B", "C", "D"],
+            "type": 1,
+            "label": "dkdkkd ?"
+           }
+       }]
+}

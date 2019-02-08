@@ -15,10 +15,11 @@
 
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="changeMode"
-        android:text="Mode" />
+        android:id="@+id/mode_read"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/bootstrap_h5_hori_padding"
+        android:onClick="changeMode" />
     <!--<EditText-->
         <!--android:id="@+id/search"-->
         <!--android:layout_width="50dp"-->

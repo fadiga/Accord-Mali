@@ -1,158 +1,266 @@
 package ml.unicef.accord_droid;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Dialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.v7.widget.MenuPopupWindow;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
 public class PlayQuiz extends Base {
 
-    private String level;
+    private static final String TAG = Constants.getLogTag("PlayQuiz");
+    private int level;
+    private int type;
+    private RadioButton rsp1;
+    private RadioButton rsp2;
+    private RadioButton rsp3;
+    private RadioButton rsp4;
+    private CheckBox checkBoxCh1;
+    private CheckBox checkBoxCh2;
+    private CheckBox checkBoxCh3;
+    private CheckBox checkBoxCh4;
+    private JSONArray choises;
+    private JSONObject qJsonObject;
+    private int nbQ = 1;
+
+    private int scoreQ1 = -1;
+    private int scoreQ2 = -1;
+    private int scoreQ3 = -1;
+    private int scoreQ4 = -1;
+    private int scoreQ5 = -1;
+    private Button start1;
+    private Button start2;
+    private Button start3;
+    private Button start4;
+    private Button start5;
+    private RadioGroup radioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_quiz);
         Bundle extras = getIntent().getExtras();
-        level = extras.getString("level");
+        level = extras.getInt(Constants.LEVEL);
+        TextView levelV = findViewById(R.id.level_v);
 
-        Toast.makeText(PlayQuiz.this,"Level : " + level , Toast.LENGTH_LONG).show();
+        start1 = findViewById(R.id.start1);
+        start2 = findViewById(R.id.start2);
+        start3 = findViewById(R.id.start3);
+        start4 = findViewById(R.id.start4);
+        start5 = findViewById(R.id.start5);
+
+        levelV.setText("LEVEL " + level);
+        playGame(nbQ);
+
     }
 
-    public void startEvaluation(View view) {
-        String[] answers = evaluateGui();
+    public void  playGame (int nbQ){
 
-        int result = evaluateQuiz(answers);
+        try {
+            JSONObject obj = new JSONObject(loadJSONFromAsset());
+            JSONArray qLevel=obj.getJSONArray("l"+ level);
+            JSONObject c = qLevel.getJSONObject(new Random().nextInt(qLevel.length()));
+            qJsonObject = c.getJSONObject("Q"+ nbQ);
+            TextView labelQ = findViewById(R.id.question_label);
+            labelQ.setText(qJsonObject.getString("label"));
+            type = qJsonObject.getInt("type");
+            choises = qJsonObject.getJSONArray("choises");
+            radioGroup = findViewById(R.id.radio_group);
+            radioGroup.clearCheck();
+            LinearLayout checkBox = findViewById(R.id.checkBox);
 
-        toastResult(result);
-    }
-
-    public String[] evaluateGui() {
-        String[] ret = new String[5];
-//        EditText editTextQuestion1 = findViewById(R.id.question_1);
-
-        CheckBox checkBoxQuestion2Greece = findViewById(R.id.question_2_Greece);
-        CheckBox checkBoxQuestion2Burma = findViewById(R.id.question_2_Burma);
-        CheckBox checkBoxQuestion2Luxembourg = findViewById(R.id.question_2_Luxembourg);
-
-        Boolean answerQuestion2 = false;
-
-        if (checkBoxQuestion2Greece.isChecked() == true && checkBoxQuestion2Burma.isChecked() == false && checkBoxQuestion2Luxembourg.isChecked() == true) {
-            answerQuestion2 = true;
+            if (type == Constants.QTUPE2) {
+                radioGroup.setVisibility(View.GONE);
+                checkBox.setVisibility(View.VISIBLE);
+                checkBoxCh1 = findViewById(R.id.ch1);
+                checkBoxCh1.setText(""+choises.get(0));
+                checkBoxCh2 = findViewById(R.id.ch2);
+                checkBoxCh2.setText("" + choises.get(1));
+                checkBoxCh3 = findViewById(R.id.ch3);
+                checkBoxCh3.setText("" +choises.get(2));
+                checkBoxCh4 = findViewById(R.id.ch4);
+                checkBoxCh4.setText("" +choises.get(3));
+            } else if (type == Constants.QTUPE1) {
+                radioGroup.setVisibility(View.VISIBLE);
+                checkBox.setVisibility(View.GONE);
+                rsp1 = findViewById(R.id.rsp1);
+                rsp1.setText(""+choises.get(0));
+                rsp2 = findViewById(R.id.rsp2);
+                rsp2.setText("" + choises.get(1));
+                rsp3 = findViewById(R.id.rsp3);
+                rsp3.setText("" +choises.get(2));
+                rsp4 = findViewById(R.id.rsp4);
+                rsp4.setText("" +choises.get(3));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
-
-        CheckBox checkBoxQuestion4Capital = findViewById(R.id.question_4_capital);
-        CheckBox checkBoxQuestion4Hessia = findViewById(R.id.question_4_hessia);
-        CheckBox checkBoxQuestion4Bavaria = findViewById(R.id.question_4_bavaria);
-
-        Boolean answerQuestion4 = false;
-
-        Boolean capital = checkBoxQuestion4Capital.isChecked();
-        Boolean hessia = checkBoxQuestion4Hessia.isChecked();
-        Boolean bavaria = checkBoxQuestion4Bavaria.isChecked();
-
-
-        if (capital == false && hessia == false && bavaria == true) {
-            answerQuestion4 = true;
-        }
-
-//        ret[0] = editTextQuestion1.getText().toString().toLowerCase();
-        ret[1] = Boolean.toString(answerQuestion2);
-        ret[2] = evaluateRadioGroup(R.id.radio_group_question_3).toLowerCase();
-        ret[3] = Boolean.toString(answerQuestion4);
-        ret[4] = evaluateRadioGroup(R.id.radio_group_question_5).toLowerCase();
-        ret[0] = evaluateRadioGroup(R.id.radio_group_question_5).toLowerCase();
-
-        return ret;
     }
 
-    public int evaluateQuiz(String[] answers) {
-        int result = 0;
-        String[] correctAnswers = {"paris", "true", "south", "true", "germany"};
+    private void checkCleaner() {
+//        TODO clear all selected
+//        checkBoxCh1.setChecked(false);
+//        checkBoxCh2.setChecked(false);
+//        checkBoxCh3.setChecked(false);
+//        checkBoxCh4.setChecked(false);
+    }
 
-        for (int i = 0; i < correctAnswers.length; i++) {
-            if (answers[i].equals(correctAnswers[i])) {
-                result++;
+    private void evaluateGuiCheck() throws JSONException {
+
+        if (type == Constants.QTUPE1) {
+            int response = qJsonObject.getInt("responses");
+            int ch = -1;
+
+            if (rsp1.isChecked()){ ch=1; }
+            if (rsp2.isChecked()){ ch=2; }
+            if (rsp3.isChecked()){ ch=3; }
+            if (rsp4.isChecked()){ ch=4; }
+
+            if (response == ch){
+                refreshScore(1);
+            } else {
+                refreshScore(0);
+            }
+        } else if (type == Constants.QTUPE2) {
+            ArrayList<Boolean> repG = new ArrayList<>();
+            ArrayList<Boolean> respTrue = new ArrayList<>();
+
+            repG.add(checkBoxCh1.isChecked());
+            repG.add(checkBoxCh2.isChecked());
+            repG.add(checkBoxCh3.isChecked());
+            repG.add(checkBoxCh4.isChecked());
+
+            JSONArray responses = qJsonObject.getJSONArray("responses");
+            for (int i=0; i<responses.length(); i++) {
+                respTrue.add(responses.getBoolean(i));
+            }
+            Collections.sort(repG);
+            Collections.sort(respTrue);
+            if (repG.equals(respTrue)){
+                refreshScore(1);
+            } else {
+                refreshScore(0);
             }
         }
 
-        return result;
-    }
+        checkCleaner();
 
-    public void toastResult(int result) {
-        String message = result + " out of 5. ";
 
-        if (result == 0) {
-            message += "Poor luck.";
-        } else if (result == 1) {
-            message += "You could do better.";
-        } else if (result == 2) {
-            message += "Quite nice.";
-        } else if (result == 3) {
-            message += "Really nice.";
-        } else if (result == 4) {
-            message += "Great!";
-        } else if (result == 5) {
-            message += "Absolutely awesome!";
+        refreshScoreUI();
+        if (nbQ < 5) {
+            nbQ++;
+            playGame(nbQ);
+        } else {
+            final Dialog settingdialog = new Dialog(PlayQuiz.this,  R.style.hidetitle);
+            settingdialog.setContentView(R.layout.end_game);
+            settingdialog.show();
+            TextView msg = settingdialog.findViewById(R.id.message);
+
+            LinearLayout TryLL = settingdialog.findViewById(R.id.tryLL);
+            LinearLayout nextLevelLy = settingdialog.findViewById(R.id.nextLevelLL);
+
+            msg.setText("SCORE GENERALE : " + result() + "/" + 5);
+            if (result() > 3) {
+                TryLL.setVisibility(View.GONE);
+                final SharedPreferences.Editor editor = sharedPrefs.edit();
+                editor.putInt(Constants.CURRENT_LEVEL, level + 1);
+                editor.apply();
+            } else {
+                nextLevelLy.setVisibility(View.GONE);
+            }
+            Button btnTry = settingdialog.findViewById(R.id.btnTry);
+            btnTry.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    settingdialog.dismiss();
+                    Intent intent = new Intent(
+                            getApplicationContext(),
+                            PlayQuiz.class);
+                    intent.putExtra(Constants.LEVEL, level);
+                    startActivity(intent);
+                }
+            });
+            Button bnNextLevel = settingdialog.findViewById(R.id.nextLevel);
+            bnNextLevel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    settingdialog.dismiss();
+                    Intent intent = new Intent(
+                            getApplicationContext(),
+                            PlayQuiz.class);
+                    intent.putExtra(Constants.LEVEL, level + 1);
+                    startActivity(intent);
+                }
+            });
+            Button readMore = settingdialog.findViewById(R.id.readMore);
+            readMore.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    settingdialog.dismiss();
+                    Intent intent = new Intent(
+                            getApplicationContext(),
+                            ReadActivity.class);
+                    startActivity(intent);
+                }
+            });
         }
-
-        Toast reportResult = Toast.makeText(getApplicationContext(), message,
-                Toast.LENGTH_SHORT);
-        reportResult.show();
     }
 
-    private String evaluateRadioGroup(int id) {
-        RadioGroup radioGroupQuestion;
-        RadioButton radioButtonQuestion;
+    public int result () {
+        return scoreQ1 + scoreQ2 + scoreQ3 + scoreQ4 + scoreQ5;
+    }
 
-        radioGroupQuestion = findViewById(id);
+    public void refreshScore(int val) {
+        if (nbQ == 1) { scoreQ1 = val; }
+        if (nbQ == 2) { scoreQ2 = val; }
+        if (nbQ == 3) { scoreQ3 = val; }
+        if (nbQ == 4) { scoreQ4 = val; }
+        if (nbQ == 5) { scoreQ5 = val; }
+    }
 
-        int radioButtonId = radioGroupQuestion.getCheckedRadioButtonId();
-        radioButtonQuestion = findViewById(radioButtonId);
+    public void refreshScoreUI() {
+        updateScore(start1, scoreQ1);
+        updateScore(start2, scoreQ2);
+        updateScore(start3, scoreQ3);
+        updateScore(start4, scoreQ4);
+        updateScore(start5, scoreQ5);
+    }
 
-        if (radioButtonQuestion == null) {
-            return "";
+    public void updateScore(Button start, int scoreQ) {
+//        Toast.makeText(getApplicationContext(), "refreshScore : "+ nbQ, Toast.LENGTH_SHORT).show();
+        if (scoreQ == 1){
+            start.setBackgroundResource(R.drawable.bn_green);
+        } else if (scoreQ == 0){
+            start.setBackgroundResource(R.drawable.bn_red);
+        } else if (scoreQ == nbQ+1){
+            start.setBackgroundResource(R.drawable.bn_yellow);
         }
-
-        return (String)radioButtonQuestion.getText();
     }
 
-    public void reset(View view) {
-//        EditText editText = findViewById(R.id.question_1);
-//        editText.setText("");
-
-        CheckBox checkBox = findViewById(R.id.question_2_Greece);
-        checkBox.setChecked(false);
-
-        checkBox = findViewById(R.id.question_2_Burma);
-        checkBox.setChecked(false);
-
-        checkBox = findViewById(R.id.question_2_Luxembourg);
-        checkBox.setChecked(false);
-
-        RadioGroup radioGroup = findViewById(R.id.radio_group_question_3);
-        radioGroup.clearCheck();
-
-        checkBox = findViewById(R.id.question_4_capital);
-        checkBox.setChecked(false);
-
-        checkBox = findViewById(R.id.question_4_hessia);
-        checkBox.setChecked(false);
-
-        checkBox = findViewById(R.id.question_4_bavaria);
-        checkBox.setChecked(false);
-
-        radioGroup = findViewById(R.id.radio_group_question_5);
-        radioGroup.clearCheck();
+    public void startEvaluation(View view) {
+        try {
+            evaluateGuiCheck();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
+
 }

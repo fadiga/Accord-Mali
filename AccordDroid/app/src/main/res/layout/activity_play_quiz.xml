@@ -1,243 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="@drawable/game_background">
+    android:gravity="center">
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        android:gravity="center">
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/bn_green"
-            android:text="2"/>
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/bn_yellow"
-            android:text="1"/>
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/bn_red"
-            android:text="2"/>
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/level_l"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight=".50"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/level_v"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="LEVEL 1"
+                android:textSize="30sp"
+                android:textStyle="bold|italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SCORE"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:fontFamily="casual" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".50"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/start1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bn_de"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/start2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bn_de"
+                    android:text="2" />
+
+                <Button
+                    android:id="@+id/start3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bn_de"
+                    android:text="3" />
+
+                <Button
+                    android:id="@+id/start4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bn_de"
+                    android:text="4" />
+
+                <Button
+                    android:id="@+id/start5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bn_de"
+                    android:text="5" />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="20dp">
+        android:layout_centerHorizontal="true">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
+            android:orientation="vertical"
+            android:layout_margin="20dp">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="djdjdjdjdj"
-                android:textAlignment="center"
-                android:textSize="22sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="6dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="20dp"
-                android:text="question2"
-                android:textSize="16sp" />
-
-            <CheckBox
-                android:id="@+id/question_2_Greece"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="0dp"
-                android:text="checkbox_greece" />
+                android:background="#FFC107">
+                <TextView
+                    android:id="@+id/question_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Question ?"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/checkBox">
 
             <CheckBox
-                android:id="@+id/question_2_Burma"
+                android:id="@+id/ch1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="0dp"
-                android:text="checkbox_burma" />
+                android:layout_marginBottom="12dp"
+                android:text="A" />
 
             <CheckBox
-                android:id="@+id/question_2_Luxembourg"
+                android:id="@+id/ch2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="0dp"
-                android:text="checkbox_luxembourg" />
+                android:layout_marginBottom="12dp"
+                android:text="B" />
 
-            <TextView
-                android:layout_width="match_parent"
+            <CheckBox
+                android:id="@+id/ch3"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="6dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="20dp"
-                android:text="question3"
-                android:textSize="16sp" />
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="12dp"
+                android:text="C" />
 
+            <CheckBox
+                android:id="@+id/ch4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="12dp"
+                android:text="D" />
+            </LinearLayout>
             <RadioGroup
-                android:id="@+id/radio_group_question_3"
+                android:id="@+id/radio_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <RadioButton
-                    android:id="@+id/question_3_north"
+                    android:id="@+id/rsp1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="0dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="4dp"
-                    android:text="north" />
+                    android:layout_marginBottom="0dp"
+                    android:text="A" />
 
                 <RadioButton
-                    android:id="@+id/question_3_east"
+                    android:id="@+id/rsp2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="0dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="2dp"
-                    android:text="east" />
+                    android:layout_marginBottom="0dp"
+                    android:text="B" />
 
                 <RadioButton
-                    android:id="@+id/question_3_south"
+                    android:id="@+id/rsp3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="0dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="2dp"
-                    android:text="south" />
+                    android:layout_marginBottom="0dp"
+                    android:text="C" />
 
                 <RadioButton
-                    android:id="@+id/question_3_west"
+                    android:id="@+id/rsp4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="2dp"
                     android:layout_marginBottom="6dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="2dp"
-                    android:text="west" />
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="6dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="20dp"
-                android:text="question4"
-                android:textSize="16sp" />
-
-            <CheckBox
-                android:id="@+id/question_4_capital"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="0dp"
-                android:text="munich_question_1" />
-
-            <CheckBox
-                android:id="@+id/question_4_bavaria"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="0dp"
-                android:text="munich_question_3" />
-
-            <CheckBox
-                android:id="@+id/question_4_hessia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="0dp"
-                android:text="munich_question_2" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="6dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="20dp"
-                android:text="question5"
-                android:textSize="16sp" />
-
-            <RadioGroup
-                android:id="@+id/radio_group_question_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <RadioButton
-                    android:id="@+id/question_5_germany"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="0dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="4dp"
-                    android:text="germany" />
-
-                <RadioButton
-                    android:id="@+id/question_5_poland"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="0dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="2dp"
-                    android:text="poland" />
-
-                <RadioButton
-                    android:id="@+id/question_5_denmark"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="22dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="2dp"
-                    android:text="denmark" />
+                    android:text="D" />
             </RadioGroup>
 
             <Button
                 android:id="@+id/evaluate"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="22dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
+                android:background="@drawable/menu_bn"
                 android:onClick="startEvaluation"
-                android:background="@drawable/menu_bn"
-                android:text="evaluate_button" />
+                android:layout_gravity="center"
+                android:text="Suivant" />
 
-            <Button
-                android:id="@+id/reset"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:onClick="reset"
-                android:text="reset_button"
-                android:background="@drawable/menu_bn"
-                android:textColor="#ff0033"
-                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

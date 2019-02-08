@@ -1,6 +1,7 @@
 package ml.unicef.accord_droid;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,19 +10,40 @@ import android.widget.Toast;
 public class QuizActivity extends Base {
 
     private static final String TAG = Constants.getLogTag("QuizActivity");
+    private boolean song;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_home);
+
         setupUI();
     }
+
+    public boolean sSong (Button bSong){
+
+        song = sharedPrefs.getBoolean(Constants.SONG, true);
+        bSong.setBackgroundResource(R.drawable.mute);
+        boolean on;
+        if (song == true) {
+            on = true;
+            bSong.setBackgroundResource(R.drawable.speaker);
+        } else {
+            bSong.setBackgroundResource(R.drawable.mute);
+            on = false;
+        }
+        return on;
+    }
+
     private void setupUI() {
         final Button ssong = findViewById(R.id.ssong);
+        sSong(ssong);
         ssong.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                ssong.setBackgroundResource(R.drawable.speaker);
-
+                final SharedPreferences.Editor editor = sharedPrefs.edit();
+                editor.putBoolean(Constants.SONG, !sSong(ssong));
+                editor.apply();
             }
         });
 
@@ -57,7 +79,7 @@ public class QuizActivity extends Base {
                 level.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(QuizActivity.this,"NON ACTIVE", Toast.LENGTH_LONG).show();
+                        Toast.makeText(QuizActivity.this,"Non debloqué.", Toast.LENGTH_SHORT).show();
                     }});
             } else {
                 level.setBackgroundResource(R.drawable.level);
@@ -65,10 +87,10 @@ public class QuizActivity extends Base {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(getApplicationContext(), PlayQuiz.class);
-                        intent.putExtra("level", el);
+                        intent.putExtra(Constants.LEVEL, el);
                         startActivity(intent);
-                    }});
+                    }
+                });
             }
-
         }
     }

@@ -29,6 +29,12 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/ssong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -127,11 +133,6 @@
                 android:layout_height="wrap_content"
                 android:text="Quitter"
                 android:background="@drawable/menu_bn" />
-            <Button
-                android:id="@+id/ssong"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/mute" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
