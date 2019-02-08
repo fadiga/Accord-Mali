@@ -1,9 +1,12 @@
 package ml.unicef.accord_droid;
 
 import android.os.Bundle;
+import android.webkit.WebView;
 
 public class AboutActivity extends Base {
 
+
+    private static WebView myWebView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -13,4 +16,5 @@ public class AboutActivity extends Base {
 
     public void setupUI() {
     }
+
 }

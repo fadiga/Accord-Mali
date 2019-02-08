@@ -44,9 +44,9 @@ public class ReadActivity extends Base {
         readMode = sharedPrefs.getBoolean(Constants.MODE_READ, true);
         modeButton =  findViewById(R.id.mode_read);
         if (readMode){
-            modeButton.setBackgroundResource(R.drawable.moon);
-        } else {
             modeButton.setBackgroundResource(R.drawable.sun);
+        } else {
+            modeButton.setBackgroundResource(R.drawable.moon);
         }
 
         pdfView.fromAsset(language + ".pdf")

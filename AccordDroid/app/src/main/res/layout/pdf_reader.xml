@@ -9,25 +9,15 @@
     <com.github.barteksc.pdfviewer.PDFView
         android:id="@+id/pdfView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="1dp">
+        android:layout_height="match_parent">
     </com.github.barteksc.pdfviewer.PDFView>
-
 
     <Button
         android:id="@+id/mode_read"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_margin="@dimen/bootstrap_h5_hori_padding"
+        android:layout_margin="5dp"
         android:onClick="changeMode" />
-    <!--<EditText-->
-        <!--android:id="@+id/search"-->
-        <!--android:layout_width="50dp"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:inputType="text"-->
-        <!--android:imeOptions="actionSearch"-->
-        <!--android:background="@android:drawable/ic_search_category_default"-->
-        <!--android:gravity="left" />-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -36,14 +26,12 @@
 
         <Button
             android:id="@+id/nextBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignTop="@+id/prev1Btn"
-            android:background="@drawable/next"
+            android:background="@drawable/ic_chevron_right_white_36dp"
             android:gravity="end"
             android:onClick="nextPage" />
-
-
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,15 +41,12 @@
 
         <Button
             android:id="@+id/prev1Btn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_chevron_left_white_36dp"
             android:gravity="start"
             android:onClick="prevPage" />
-
-
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,16 +55,16 @@
 
         <ImageButton
             android:id="@+id/button3"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/zoom_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_zoom_in_white_36dp"
             android:onClick="zoomIn" />
 
         <ImageButton
             android:id="@+id/button4"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/zoom_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_zoom_out_white_36dp"
             android:onClick="zoomOut" />
     </LinearLayout>
 

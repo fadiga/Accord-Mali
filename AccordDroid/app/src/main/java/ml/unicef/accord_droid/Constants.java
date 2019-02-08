@@ -21,7 +21,7 @@ public class Constants {
     static String l9 = "Shennara";
     static String l10 = "Soninke";
     static String l11 = "Bozo";
-    static String l12 = "Bogon";
+    static String l12 = "Dogon";
     static String l13 = "Malinke";
     static String l14 = "Khasonke";
     static String LANGUAGE = "language";

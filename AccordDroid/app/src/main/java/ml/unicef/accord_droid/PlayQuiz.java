@@ -153,14 +153,12 @@ public class PlayQuiz extends Base {
                     break;
                 }
             }
-
             if (resp){
                 refreshScore(1);
             } else {
                 refreshScore(0);
             }
         }
-
         refreshScoreUI();
         if (nbQ < 5) {
             nbQ++;
@@ -251,8 +249,6 @@ public class PlayQuiz extends Base {
             start.setBackgroundResource(R.drawable.bn_green);
         } else if (scoreQ == 0){
             start.setBackgroundResource(R.drawable.bn_red);
-        } else if (scoreQ == nbQ+1){
-            start.setBackgroundResource(R.drawable.bn_yellow);
         }
     }
 
