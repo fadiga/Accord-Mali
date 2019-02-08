@@ -196,6 +196,7 @@ public class PlayQuiz extends Base {
             bnNextLevel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    finish();
                     settingdialog.dismiss();
                     Intent intent = new Intent(
                             getApplicationContext(),

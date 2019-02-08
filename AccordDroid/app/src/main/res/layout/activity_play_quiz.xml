@@ -51,36 +51,36 @@
 
                 <Button
                     android:id="@+id/start1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/bn_de"
                     android:text="1" />
 
                 <Button
                     android:id="@+id/start2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/bn_de"
                     android:text="2" />
 
                 <Button
                     android:id="@+id/start3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/bn_de"
                     android:text="3" />
 
                 <Button
                     android:id="@+id/start4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/bn_de"
                     android:text="4" />
 
                 <Button
                     android:id="@+id/start5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/bn_de"
                     android:text="5" />
             </LinearLayout>
