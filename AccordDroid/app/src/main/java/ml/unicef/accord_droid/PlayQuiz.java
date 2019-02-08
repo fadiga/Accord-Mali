@@ -91,12 +91,16 @@ public class PlayQuiz extends Base {
                 radioGroup.setVisibility(View.GONE);
                 checkBox.setVisibility(View.VISIBLE);
                 checkBoxCh1 = findViewById(R.id.ch1);
+                checkBoxCh1.setChecked(false);
                 checkBoxCh1.setText(""+choises.get(0));
                 checkBoxCh2 = findViewById(R.id.ch2);
+                checkBoxCh2.setChecked(false);
                 checkBoxCh2.setText("" + choises.get(1));
                 checkBoxCh3 = findViewById(R.id.ch3);
+                checkBoxCh3.setChecked(false);
                 checkBoxCh3.setText("" +choises.get(2));
                 checkBoxCh4 = findViewById(R.id.ch4);
+                checkBoxCh4.setChecked(false);
                 checkBoxCh4.setText("" +choises.get(3));
             } else if (type == Constants.QTUPE1) {
                 radioGroup.setVisibility(View.VISIBLE);
@@ -115,13 +119,6 @@ public class PlayQuiz extends Base {
         }
     }
 
-    private void checkCleaner() {
-//        TODO clear all selected
-//        checkBoxCh1.setChecked(false);
-//        checkBoxCh2.setChecked(false);
-//        checkBoxCh3.setChecked(false);
-//        checkBoxCh4.setChecked(false);
-    }
 
     private void evaluateGuiCheck() throws JSONException {
 
@@ -160,9 +157,6 @@ public class PlayQuiz extends Base {
                 refreshScore(0);
             }
         }
-
-        checkCleaner();
-
 
         refreshScoreUI();
         if (nbQ < 5) {
