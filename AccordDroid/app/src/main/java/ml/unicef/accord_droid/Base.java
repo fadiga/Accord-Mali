@@ -48,8 +48,10 @@ public class Base extends Activity {
 
     public void dialogueSettings() {
 
-        final Dialog settingdialog = new Dialog(Base.this);
+        final Dialog settingdialog = new Dialog(Base.this, R.style.hidetitle);
+
         settingdialog.setContentView(R.layout.add_preference);
+        settingdialog.setCancelable(false);
         settingdialog.setTitle("Paramètre de langue");
         settingdialog.show();
         spinner = settingdialog.findViewById(R.id.spinner);

@@ -163,15 +163,17 @@ public class PlayQuiz extends Base {
             nbQ++;
             playGame(nbQ);
         } else {
-            final Dialog settingdialog = new Dialog(PlayQuiz.this,  R.style.hidetitle);
-            settingdialog.setContentView(R.layout.end_game);
-            settingdialog.show();
-            TextView msg = settingdialog.findViewById(R.id.message);
+            final Dialog endgamedialog = new Dialog(PlayQuiz.this,  R.style.hidetitle);
+            endgamedialog.setCancelable(false);
+            endgamedialog.setContentView(R.layout.end_game);
+            endgamedialog.show();
+            TextView msg = endgamedialog.findViewById(R.id.message);
 
-            LinearLayout TryLL = settingdialog.findViewById(R.id.tryLL);
-            LinearLayout nextLevelLy = settingdialog.findViewById(R.id.nextLevelLL);
+            LinearLayout TryLL = endgamedialog.findViewById(R.id.tryLL);
+            LinearLayout nextLevelLy = endgamedialog.findViewById(R.id.nextLevelLL);
 
             msg.setText("SCORE GENERALE : " + result() + "/" + 5);
+
             if (result() > 3) {
                 TryLL.setVisibility(View.GONE);
                 final SharedPreferences.Editor editor = sharedPrefs.edit();
@@ -180,11 +182,12 @@ public class PlayQuiz extends Base {
             } else {
                 nextLevelLy.setVisibility(View.GONE);
             }
-            Button btnTry = settingdialog.findViewById(R.id.btnTry);
+            Button btnTry = endgamedialog.findViewById(R.id.btnTry);
             btnTry.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    settingdialog.dismiss();
+                    endgamedialog.dismiss();
+                    finish();
                     Intent intent = new Intent(
                             getApplicationContext(),
                             PlayQuiz.class);
@@ -192,12 +195,12 @@ public class PlayQuiz extends Base {
                     startActivity(intent);
                 }
             });
-            Button bnNextLevel = settingdialog.findViewById(R.id.nextLevel);
+            Button bnNextLevel = endgamedialog.findViewById(R.id.nextLevel);
             bnNextLevel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    endgamedialog.dismiss();
                     finish();
-                    settingdialog.dismiss();
                     Intent intent = new Intent(
                             getApplicationContext(),
                             PlayQuiz.class);
@@ -205,11 +208,11 @@ public class PlayQuiz extends Base {
                     startActivity(intent);
                 }
             });
-            Button readMore = settingdialog.findViewById(R.id.readMore);
+            Button readMore = endgamedialog.findViewById(R.id.readMore);
             readMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    settingdialog.dismiss();
+                    endgamedialog.dismiss();
                     Intent intent = new Intent(
                             getApplicationContext(),
                             ReadActivity.class);
