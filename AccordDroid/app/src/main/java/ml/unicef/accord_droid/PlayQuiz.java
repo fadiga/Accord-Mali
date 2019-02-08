@@ -138,20 +138,23 @@ public class PlayQuiz extends Base {
             }
         } else if (type == Constants.QTUPE2) {
             ArrayList<Boolean> repG = new ArrayList<>();
-            ArrayList<Boolean> respTrue = new ArrayList<>();
-
             repG.add(checkBoxCh1.isChecked());
             repG.add(checkBoxCh2.isChecked());
             repG.add(checkBoxCh3.isChecked());
             repG.add(checkBoxCh4.isChecked());
 
             JSONArray responses = qJsonObject.getJSONArray("responses");
+            Boolean resp = false;
             for (int i=0; i<responses.length(); i++) {
-                respTrue.add(responses.getBoolean(i));
+                if (repG.get(i).equals(responses.get(i))) {
+                    resp = true;
+                } else {
+                    resp = false;
+                    break;
+                }
             }
-            Collections.sort(repG);
-            Collections.sort(respTrue);
-            if (repG.equals(respTrue)){
+
+            if (resp){
                 refreshScore(1);
             } else {
                 refreshScore(0);

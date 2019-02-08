@@ -1,53 +1,65 @@
 {"l1" : [{
-        "Q1": {
-            "responses": [true, false, true, false],
-            "choises": ["A", "B", "C", "D"],
-            "type": 2,
-            "label": "Qui était sur la table de négociation ?"
-           },
-        "Q2": {
-            "responses": 4,
-            "choises": ["Article 2", "Article 3 ", "Article 1", "Article 5"],
-            "type": 1,
-            "label": "la création des conditions d'une paix au Mali,contribuant à la stabilité sous régionale ,ainsi qu'a la sécurité internationale est préciser dans quel article ?"
-           },
-        "Q3": {
-            "responses": [true, false, true, false],
-            "choises": ["MOC", "UNICEF", "MINUSMA", "DNDS"],
-            "type": 2,
-            "label": "les force armées et de sécurité reconstituées se rédéployeront, de manière progressive à compté de la signature d'accord ,sur l'ensemble des régions du nord. ce rédéploiement s'effectuera sous la conduite de qui?"
-           },
-        "Q4": {
-            "responses": 4,
-            "choises": ["A", "B", "C", "Ddsdfdsfdsf"],
-            "type": 1,
-            "label": "cdjjjdjn ?"
-           },
-        "Q5": {
-            "responses": 4,
-            "choises": ["A", "B", "C", "D"],
-            "type": 1,
-            "label": "ssss ?"
-           }
-       }],
-       "l2" : [{
-        "Q1": {
-            "responses": [true, false, false, false],
-            "choises": ["A", "B", "C", "D"],
-            "type": 2,
-            "label": ""
-           },
-        "Q2": {
-            "responses": 3,
-            "choises": ["A", "B", "C", "D"],
-            "type": 1,
-            "label": ""
-           },
-        "Q3": {
-            "responses": 0,
-            "choises": ["A", "B", "C", "D"],
-            "type": 1,
-            "label": "dkdkkd ?"
-           }
-       }]
+  "Q1": {
+    "responses": [true, true, false, false],
+    "choises": ["Inclusivité et réprésentation significative de toutes les populations du Mali au sein des forces armées et de sécurité", "Progressivité du déploiement des forces armées et de sécurité reconstitués du Mali", "L'exploitation des ressources naturelles ,notament minières", "Toute autre question entrant dans la mise en ouvre de l'accord"],
+    "type": 2,
+    "label": "quel sont les principes qui régies les questions de défence et de sécurité ?"
+  },
+  "Q2": {
+    "responses": 4,
+    "choises": ["Article 2", "Article 3 ", "Article 1", "Article 5"],
+    "type": 1,
+    "label": "la création des conditions d'une paix au Mali, contribuant à la stabilité sous régionale, ainsi qu'a la sécurité internationale est préciser dans quel article ?"
+  },
+  "Q3": {
+    "responses": [true, false, true, false],
+    "choises": ["MOC", "UNICEF", "MINUSMA", "DNDS"],
+    "type": 2,
+    "label": "les force armées et de sécurité reconstituées se rédéployeront, de manière progressive à compté de la signature d'accord ,sur l'ensemble des régions du nord. ce rédéploiement s'effectuera sous la conduite de qui?"
+  },
+  "Q4": {
+    "responses": 4,
+    "choises": ["Hassane Ould", "Mohamed AG", "Abdramane Maiga", "S.E.M Ramtone LAMAMRA"],
+    "type": 1,
+    "label": "quel est le Nom du chef signateur pour la médiation en République Algérienne Démographique et Populaire ?"
+  },
+  "Q5": {
+    "responses": [true, false, true, true],
+    "choises": ["L'UA", "MINUSMA", "CEDAO", "L'OCI"],
+    "type": 2,
+    "label": "quel sont les organisations  qui ce son engagés à apporter leur soutien politique à l'accord ?"
+  }
+}],
+  "l2" : [{
+    "Q1": {
+      "responses": [true, false, true, false],
+      "choises": ["A", "B", "C", "D"],
+      "type": 2,
+      "label": "Qui était sur la table de négociation ?"
+    },
+    "Q2": {
+      "responses": 3,
+      "choises": ["A", "B", "C", "D"],
+      "type": 1,
+      "label": "Question test 2 ?"
+    },
+    "Q3": {
+      "responses": 0,
+      "choises": ["A", "B", "C", "D"],
+      "type": 1,
+      "label": "Question test 3 ?"
+    },
+    "Q4": {
+      "responses": 0,
+      "choises": ["A", "B", "C", "D"],
+      "type": 1,
+      "label": "Question test 4 ?"
+    },
+    "Q5": {
+      "responses": 0,
+      "choises": ["A", "B", "C", "D"],
+      "type": 1,
+      "label": "Question test 5 ?"
+    }
+  }]
 }

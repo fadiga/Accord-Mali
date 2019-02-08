@@ -25,4 +25,10 @@
     <style name="hidetitle" parent="android:style/Theme.Dialog">
         <item name="android:windowNoTitle">true</item>
     </style>
+    <style name="radio_peace">
+        <item name="android:textSize">20dp</item>
+        <item name="android:gravity">top</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
 </resources>
