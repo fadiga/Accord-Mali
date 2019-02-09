@@ -171,19 +171,23 @@ public class PlayQuiz extends Base {
             endgamedialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             endgamedialog.setContentView(R.layout.end_game);
             endgamedialog.show();
-            TextView msg = endgamedialog.findViewById(R.id.message);
+            TextView msgscore = endgamedialog.findViewById(R.id.msgscore);
+            TextView msg = endgamedialog.findViewById(R.id.msg);
 
             LinearLayout TryLL = endgamedialog.findViewById(R.id.tryLL);
             LinearLayout nextLevelLy = endgamedialog.findViewById(R.id.nextLevelLL);
 
-            msg.setText("SCORE FINALE : " + result() + "/" + 5);
+            msgscore.setText("SCORE FINALE : " + result() + "/" + 5);
 
             if (result() > 3) {
                 TryLL.setVisibility(View.GONE);
+
+                msg.setText("Felicitaion !");
                 final SharedPreferences.Editor editor = sharedPrefs.edit();
                 editor.putInt(Constants.CURRENT_LEVEL, level + 1);
                 editor.apply();
             } else {
+                msg.setText("Perdue !");
                 nextLevelLy.setVisibility(View.GONE);
             }
             Button btnTry = endgamedialog.findViewById(R.id.btnTry);

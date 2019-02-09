@@ -67,5 +67,4 @@
             android:background="@drawable/zoom_out"
             android:onClick="zoomOut" />
     </LinearLayout>
-
 </RelativeLayout>

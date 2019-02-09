@@ -10,17 +10,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:gravity="center"
         android:layout_weight=".50">
 
         <TextView
-            android:id="@+id/message"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
+            android:id="@+id/msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif-monospace"
             android:text="THE END"
-            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="#ffffff"
             android:textSize="24sp" />
+        <TextView
+            android:id="@+id/msgscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score Finale"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:fontFamily="serif-monospace"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/nextLevelLL"
@@ -33,7 +42,7 @@
             android:id="@+id/nextLevel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/menu_bn"
+            android:background="@drawable/button_play"
             android:layout_gravity="center"
             android:text="Continuer"/>
 
@@ -42,19 +51,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="center"
         android:id="@+id/tryLL">
 
         <Button
             android:id="@+id/btnTry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/menu_bn"
+            android:background="@drawable/button_play"
             android:text="Réessayer"
             android:layout_gravity="center"/>
 
         <Button
             android:id="@+id/readMore"
-            android:background="@drawable/menu_bn"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

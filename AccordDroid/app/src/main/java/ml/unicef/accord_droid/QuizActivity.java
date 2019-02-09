@@ -22,31 +22,24 @@ public class QuizActivity extends Base {
 
     public boolean sSong (Button bSong){
 
-        song = sharedPrefs.getBoolean(Constants.SONG, true);
         bSong.setBackgroundResource(R.drawable.mute);
-        boolean on;
-        if (song == true) {
-            on = true;
-            bSong.setBackgroundResource(R.drawable.speaker);
-        } else {
-            bSong.setBackgroundResource(R.drawable.mute);
-            on = false;
-        }
-        return on;
+        song = sharedPrefs.getBoolean(Constants.SONG, true);
+        if (song) { bSong.setBackgroundResource(R.drawable.speaker); }
+        return song;
     }
 
     private void setupUI() {
-        final Button ssong = findViewById(R.id.ssong);
-        sSong(ssong);
-        ssong.setOnClickListener(new View.OnClickListener(){
+        final Button bn_song = findViewById(R.id.ssong);
+        song = sSong(bn_song);
+        bn_song.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 final SharedPreferences.Editor editor = sharedPrefs.edit();
-                editor.putBoolean(Constants.SONG, !sSong(ssong));
+                editor.putBoolean(Constants.SONG, !song);
                 editor.apply();
+                sSong(bn_song);
             }
         });
-
         Button cancel = findViewById(R.id.cancel);
         cancel.setOnClickListener(new View.OnClickListener(){
             @Override

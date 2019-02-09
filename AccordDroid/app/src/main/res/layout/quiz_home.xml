@@ -131,8 +131,9 @@
                 android:id="@+id/cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="30dp"
                 android:text="Quitter"
-                android:background="@drawable/menu_bn" />
+                android:background="@drawable/button_play" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
