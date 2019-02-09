@@ -7,6 +7,8 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -52,6 +54,7 @@ public class Base extends Activity {
 
         settingdialog.setContentView(R.layout.add_preference);
         settingdialog.setCancelable(false);
+        settingdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         settingdialog.setTitle("Paramètre de langue");
         settingdialog.show();
         spinner = settingdialog.findViewById(R.id.spinner);

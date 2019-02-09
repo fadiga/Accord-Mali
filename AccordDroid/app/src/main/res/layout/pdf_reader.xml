@@ -11,11 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </com.github.barteksc.pdfviewer.PDFView>
-
     <Button
         android:id="@+id/mode_read"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_margin="5dp"
         android:onClick="changeMode" />
     <LinearLayout
@@ -23,13 +22,12 @@
         android:layout_height="match_parent"
         android:gravity="center|end"
         android:orientation="horizontal">
-
         <Button
             android:id="@+id/nextBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignTop="@+id/prev1Btn"
-            android:background="@drawable/ic_chevron_right_white_36dp"
+            android:background="@drawable/next"
             android:gravity="end"
             android:onClick="nextPage" />
     </LinearLayout>
@@ -41,9 +39,9 @@
 
         <Button
             android:id="@+id/prev1Btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_chevron_left_white_36dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/prev"
             android:gravity="start"
             android:onClick="prevPage" />
     </LinearLayout>
@@ -55,16 +53,18 @@
 
         <ImageButton
             android:id="@+id/button3"
+            android:layout_marginRight="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_zoom_in_white_36dp"
+            android:background="@drawable/zoom_in"
             android:onClick="zoomIn" />
 
         <ImageButton
             android:id="@+id/button4"
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_zoom_out_white_36dp"
+            android:background="@drawable/zoom_out"
             android:onClick="zoomOut" />
     </LinearLayout>
 

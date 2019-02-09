@@ -21,12 +21,13 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
             android:layout_weight="0.50"
             android:orientation="vertical"
             tools:ignore="MissingConstraints"
+            android:scaleType="matrix"
+            android:adjustViewBounds="true"
             android:background="@drawable/hand_der_fatima">
             <TextView
                 android:id="@+id/textView"

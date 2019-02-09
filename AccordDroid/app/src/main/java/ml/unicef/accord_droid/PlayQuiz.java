@@ -3,6 +3,8 @@ package ml.unicef.accord_droid;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import android.support.v7.widget.MenuPopupWindow;
@@ -166,6 +168,7 @@ public class PlayQuiz extends Base {
         } else {
             final Dialog endgamedialog = new Dialog(PlayQuiz.this,  R.style.hidetitle);
             endgamedialog.setCancelable(false);
+            endgamedialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             endgamedialog.setContentView(R.layout.end_game);
             endgamedialog.show();
             TextView msg = endgamedialog.findViewById(R.id.message);
@@ -173,7 +176,7 @@ public class PlayQuiz extends Base {
             LinearLayout TryLL = endgamedialog.findViewById(R.id.tryLL);
             LinearLayout nextLevelLy = endgamedialog.findViewById(R.id.nextLevelLL);
 
-            msg.setText("SCORE GENERALE : " + result() + "/" + 5);
+            msg.setText("SCORE FINALE : " + result() + "/" + 5);
 
             if (result() > 3) {
                 TryLL.setVisibility(View.GONE);
@@ -213,6 +216,7 @@ public class PlayQuiz extends Base {
             readMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    finish();
                     endgamedialog.dismiss();
                     Intent intent = new Intent(
                             getApplicationContext(),
