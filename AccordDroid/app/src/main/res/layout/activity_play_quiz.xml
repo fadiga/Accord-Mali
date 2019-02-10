@@ -106,7 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="20dp"
-                    android:background="#FFC107"
+                    android:background="#866503"
                     android:text="Question ?"
                     android:fontFamily="sans-serif-medium"
                     android:textAlignment="center"

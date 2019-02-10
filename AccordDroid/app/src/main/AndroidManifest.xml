@@ -27,7 +27,7 @@
             android:name=".AboutActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HistoryActivity"
+            android:name=".News"
             android:screenOrientation="portrait" />
         <activity
             android:name=".PlayQuiz"

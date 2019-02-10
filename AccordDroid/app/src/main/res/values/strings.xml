@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Paix Mali</string>
+    <string name="app_market_url">market://details?id=ml.unicef.accord_droid.ebolamali</string>
+    <string name="version_button_default_label">Vérifier mises à jour</string>
+    <string name="version_button_label">Version %1$s (vérifier mises à jour)</string>
     <string name="title">ACCORD POUR LA PAIX \n ET LA RECONCILIATION AU MALI \n ISSU DU PROCESSUS D’ALGER</string>
     <string name="ok">OK</string>
     <string name="error_field_empty">error_field_empty</string>
@@ -8,4 +11,42 @@
     <string name="menu_settings">Configuration</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="cancel">Annuler</string>
+    <string name="url_actualities">https://www.facebook.com/pages/Tous-Contre-Ebola-au-Mali/1539747236239746?fref=ts</string>
+    <string name="required_connexion_title">Connexion requise</string>
+    <string name="required_connexion_body">Cette action nécessite une connexion à Internet. Activez les données ou le WiFi puis réessayez.</string>
+    <string name="required_connexion_cancel">Annuler</string>
+    <string name="required_connexion_retry">Réessayer</string><string name="about_long_description">
+        <![CDATA[
+            <h4>Prévention</h4>
+            <div>Cette application a été développé dans le cadre de la campagne #TousContreEbolaAuMali.
+                Stop Ebola vise à prévenir et informer sur Ebola.</div>
+        ]]>
+    </string>
+    <string name="Initiateur">
+        <![CDATA[
+            <h3>Ont travaillé sur le projet:</h3>
+           <b>Initiateur:</b><br/>
+           \t <b> Malisanté.</b><br/>
+           \t <b>Tel:</b> +223 66 66 88 13<br/>
+           \t <b>E-mail:</b> info@malisante.net<br/>
+           \t <b>web:</b> <a href="www.malisante.net">www.malisante.net</a><br/>
+        ]]>
+    </string>
+    <string name="autor">
+        <![CDATA[
+            <b>Développeur:</b><br/>
+            \t Ibrahim Fadiga <br/>
+            <b>Assitante:</b><br/>
+            \t Assa Kaba <br/>
+            \t Marietou Sidibé dite Magnaga <br/>
+         ]]>
+    </string>
+    <string name="contributor">
+        <![CDATA[
+            <b>Contributeurs:</b><br/>
+            \t <b>Logo: </b>Doc Bah sahel studio<br/>
+         ]]>
+    </string>
+    <string name="link_face">#TousContreEbolaAuMali</string>
+    <string name="news">Actualité</string>
 </resources>

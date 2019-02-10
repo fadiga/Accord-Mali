@@ -41,8 +41,7 @@
             android:layout_margin="20dp"
             android:gravity="center"
             android:popupBackground="#fff"
-            android:textSize="24sp"
-            android:theme="@android:style/Widget.Holo.Light.Spinner" />
+            android:textSize="24sp" />
     </LinearLayout>
 
     <LinearLayout
