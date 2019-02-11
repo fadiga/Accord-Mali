@@ -59,7 +59,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_play"
+            android:layout_weight=".50"
             android:text="Réessayer"
+
             android:layout_gravity="center"/>
 
         <Button
@@ -68,6 +70,7 @@
             android:background="@drawable/button_play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight=".50"
             android:layout_gravity="center"
             android:text="Lire l'accord"/>
     </LinearLayout>

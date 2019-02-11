@@ -25,20 +25,12 @@ public class AboutActivity extends Base {
 
         TextView ebout = (TextView) findViewById(R.id.appLongDescriptionLabel);
         ebout.setText(Html.fromHtml(getString(R.string.about_long_description)));
-        TextView autor = (TextView) findViewById(R.id.autor);
-        autor.setText(Html.fromHtml(getString(R.string.autor)));
-        autor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText("ehdn", "kddd");
-            }
-        });
 
         TextView Initiateur = (TextView) findViewById(R.id.Initiateur);
         Initiateur.setText(Html.fromHtml(getString(R.string.Initiateur)));
 
-        //TextView contributor = (TextView) findViewById(R.id.contributor);
-        //contributor.setText(Html.fromHtml(getString(R.string.contributor)));
+        TextView contributor = (TextView) findViewById(R.id.contributor);
+        contributor.setText(Html.fromHtml(getString(R.string.contributor)));
 
         versionButton = (Button) findViewById(R.id.versionButton);
         versionButton.setText(String.format(

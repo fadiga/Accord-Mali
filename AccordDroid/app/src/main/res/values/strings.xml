@@ -17,36 +17,30 @@
     <string name="required_connexion_cancel">Annuler</string>
     <string name="required_connexion_retry">Réessayer</string><string name="about_long_description">
         <![CDATA[
-            <h4>Prévention</h4>
-            <div>Cette application a été développé dans le cadre de la campagne #TousContreEbolaAuMali.
-                Stop Ebola vise à prévenir et informer sur Ebola.</div>
+            <h4>INTRODUCTION</h4>
+            <p>L’accord de paix et de réconciliation au Mali a été signé en 2015 par le représentant du gouvernement malien et les mouvements politico-militaires du nord du Mali.</p>
+            <p> Seulement, depuis sa ratification, l’accord peine à être concrétisé et reste peu connu de la jeunesse malienne, en particulier celle du centre, empêchant celle-ci de s’engager pour son application. </div>
         ]]>
     </string>
     <string name="Initiateur">
         <![CDATA[
-            <h3>Ont travaillé sur le projet:</h3>
-           <b>Initiateur:</b><br/>
-           \t <b> Malisanté.</b><br/>
-           \t <b>Tel:</b> +223 66 66 88 13<br/>
-           \t <b>E-mail:</b> info@malisante.net<br/>
-           \t <b>web:</b> <a href="www.malisante.net">www.malisante.net</a><br/>
+           <h3>INITIATEUR:</h3>
+           \t <b> UNICEF Le fonds des Nations Unies pour l’enfance | Mali</b><br/>
+           \t <b>Adresse:</b> Niamakoro, Route de l’Aéroport <br/> \t \t | BP 96 | Bamako, République du Mali<br/>
+           \t <b>web:</b> <a href="https://www.unicef.org/fr">www.unicef.org</a><br/>
         ]]>
-    </string>
-    <string name="autor">
-        <![CDATA[
-            <b>Développeur:</b><br/>
-            \t Ibrahim Fadiga <br/>
-            <b>Assitante:</b><br/>
-            \t Assa Kaba <br/>
-            \t Marietou Sidibé dite Magnaga <br/>
-         ]]>
     </string>
     <string name="contributor">
         <![CDATA[
-            <b>Contributeurs:</b><br/>
-            \t <b>Logo: </b>Doc Bah sahel studio<br/>
+            <h3>Ont travaillé sur le projet:</h3>
+            <b>\tDocuments de l\'accord</b><br/>
+                \t \t - Ministère de la Réconciliation Nationale <br/>
+            <b>\tOnt participer au développement:</b><br/>
+                \t \t - Assa Kaba <br/>
+                \t \t - Marietou Sidibé dite Magnaga <br/>
+            <h3>Contributeurs:</h3>
          ]]>
     </string>
-    <string name="link_face">#TousContreEbolaAuMali</string>
+    <string name="link_face">#AccordPaixMali</string>
     <string name="news">Actualité</string>
 </resources>

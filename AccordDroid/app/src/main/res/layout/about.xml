@@ -12,67 +12,59 @@
         android:id="@+id/scrollView"
         style="@android:style/Animation.Translucent"
         android:layout_above="@+id/versionButton">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:paddingBottom="10dp"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="10dp">
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/appLongDescriptionLabel"
-                android:linksClickable="true"
-                android:textIsSelectable="true"
-                android:textSize="17dp"
-                android:gravity="center_horizontal|left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/Initiateur"
-                android:linksClickable="true"
-                android:textIsSelectable="true"
-                android:textSize="15dp"
                 android:gravity="center_horizontal|left"
-                android:layout_alignTop="@+id/appLongDescriptionLabel"
-                />
+                android:linksClickable="true"
+                android:textIsSelectable="true"/>
+
             <TextView
-                android:text=""
+                android:id="@+id/link_face"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/autor"
                 android:linksClickable="true"
-                android:textIsSelectable="true"
-                android:textSize="15dp"
-                />
+                android:text="@string/link_face"/>
+            <TextView
+                android:id="@+id/Initiateur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/appLongDescriptionLabel"
+                android:gravity="center_horizontal|left"
+                android:linksClickable="true"
+                android:textIsSelectable="true" />
 
             <TextView
                 android:id="@+id/contributor"
-                android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:linksClickable="true"
-                android:textSize="15sp" />
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:text=""/>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/armoiries_mali" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/armoiries_mali" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/unicef" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -82,11 +74,17 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/unesco_logo" />
             </LinearLayout>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/peacebuilding" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/peacebuilding" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
     <Button

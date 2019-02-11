@@ -182,7 +182,7 @@ public class PlayQuiz extends Base {
             if (result() > 3) {
                 TryLL.setVisibility(View.GONE);
 
-                msg.setText("Felicitaion !");
+                msg.setText("Felicitation !");
                 final SharedPreferences.Editor editor = sharedPrefs.edit();
                 editor.putInt(Constants.CURRENT_LEVEL, level + 1);
                 editor.apply();
