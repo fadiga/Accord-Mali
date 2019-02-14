@@ -19,17 +19,10 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
-import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import ml.unicef.rssfeed.RssFeed;
-import ml.unicef.rssfeed.RssItem;
-import ml.unicef.rssfeed.RssReader;
 
 public class News extends Base {
 
@@ -58,8 +51,6 @@ public class News extends Base {
             Toast.makeText(News.this, "Vous êtes en mode hors connexion",
                     Toast.LENGTH_LONG).show();
         }
-//        setupUI();
-//        new GetRssFeed().execute("https://facebook-rss.herokuapp.com/rss/1631784637066809");
 
     }
 
@@ -73,91 +64,4 @@ public class News extends Base {
         webView.loadDataWithBaseURL(null, htmlString, "text/html", "utf-8", null);
     }
 
-//    public void setupUI(){
-//
-//        String[] from = {"title", "description", "date"};
-//        int[] to = {R.id.title, R.id.description, R.id.dateP};
-//
-//        mListView = (ListView) findViewById(R.id.lv_resource);
-////        List<Map<String, ?>> data = getData();
-//        adapter = new SimpleAdapter(getBaseContext(), list, R.layout.basic_list_item, from, to);
-//
-//        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            public void onItemClick(AdapterView<?> parent, View view,
-//                                    int position, long id) {
-//
-//                HashMap<String, Object> hm = (HashMap<String, Object>) adapter.getItem((int) id);
-//                String selectId = (String) hm.get("id");
-//                Log.d(TAG, selectId + " has selected");
-//                // Intent a = new Intent(CultureHome.this, About.class);
-//                // startActivity(a);
-//            }
-//        });
-//        mListView.setAdapter(adapter);
-//    }
-//
-//
-//    private class GetRssFeed extends AsyncTask<String, Void, Void> {
-//
-//        private ProgressDialog Dialog = new ProgressDialog(News.this);
-//
-//        public boolean isOnline() {
-//            ConnectivityManager cm =
-//                    (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-//            NetworkInfo netInfo = cm.getActiveNetworkInfo();
-//            if (netInfo != null && netInfo.isConnectedOrConnecting()) {
-//                return true;
-//            }
-//            return false;
-//        }
-//
-//        @Override
-//        protected Void doInBackground(String... params) {
-//            Log.d(TAG, "doInBackground" + " " + params[0]);
-//
-//            try {
-//                URL url = new URL(params[0]);
-//                RssFeed feed = RssReader.read(url);
-//
-//                ArrayList<RssItem> rssItems = feed.getRssItems();
-//                for (RssItem item : rssItems) {
-//                    Log.i(TAG, item.getLink());
-//                    Map map = new HashMap();
-//                    map.put("id", String.valueOf(item.getLink()));
-//                    map.put("title", Html.fromHtml(item.getTitle()));
-//                    map.put("description", Html.fromHtml(item.getDescription()));
-//                    map.put("date", item.getPubDate());
-//                    list.add(map);
-//                }
-//                    setupUI();
-//            } catch (Exception e) {
-//                Log.v(TAG, "RssFeed " + String.valueOf(e));
-//            }
-//            return null;
-//        }
-//        @Override
-//        protected void onPreExecute() {
-//            // Loading
-//            if (isOnline()){
-//                Dialog.setMessage("Chargement en cours ...");
-//                Dialog.setCancelable(false);
-//                Dialog.show();
-//            }
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Void aVoid) {
-//            super.onPostExecute(aVoid);
-//            if (isOnline()) {
-//                // after completed finished the progressbar
-//                Dialog.dismiss();
-//                adapter.notifyDataSetChanged();
-//                mListView.setAdapter(adapter);
-////                setupUI();
-//            }else{
-//                Toast.makeText(News.this, "Vous êtes en mode hors connexion",
-//                        Toast.LENGTH_LONG).show();
-//            }
-//        }
-//    }
 }

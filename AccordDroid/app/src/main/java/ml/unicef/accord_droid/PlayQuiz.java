@@ -7,8 +7,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
-import android.support.v7.widget.MenuPopupWindow;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -41,7 +39,7 @@ public class PlayQuiz extends Base {
     private CheckBox checkBoxCh4;
     private JSONArray choises;
     private JSONObject qJsonObject;
-    private int nbQ = 1;
+    private int nbQ = 0;
 
     private int scoreQ1 = -1;
     private int scoreQ2 = -1;
@@ -54,6 +52,8 @@ public class PlayQuiz extends Base {
     private Button start4;
     private Button start5;
     private RadioGroup radioGroup;
+
+    private ArrayList<Integer> list_q;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,19 +68,27 @@ public class PlayQuiz extends Base {
         start3 = findViewById(R.id.start3);
         start4 = findViewById(R.id.start4);
         start5 = findViewById(R.id.start5);
-
         levelV.setText("LEVEL " + level);
+
+        list_q =  makeQuestion();
         playGame(nbQ);
 
     }
 
-    public void  playGame (int nbQ){
+    public ArrayList<Integer> makeQuestion(){
+        ArrayList<Integer> number = new ArrayList<Integer>();
+        for (int i = 1; i <= 5; ++i) number.add(i);
+        Collections.shuffle(number);
+        return number;
+    }
 
+    public void  playGame (int nbQ){
+        //        Toast.makeText(getApplicationContext(), "nbQ : " + nbQ + "list_q.get(nbQ) " + list_q.get(nbQ), Toast.LENGTH_LONG).show();
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
-            JSONArray qLevel=obj.getJSONArray("l"+ level);
+            JSONArray qLevel=obj.getJSONArray("l" + level);
             JSONObject c = qLevel.getJSONObject(new Random().nextInt(qLevel.length()));
-            qJsonObject = c.getJSONObject("Q"+ nbQ);
+            qJsonObject = c.getJSONObject("Q" + list_q.get(nbQ));
             TextView labelQ = findViewById(R.id.question_label);
             labelQ.setText(qJsonObject.getString("label"));
             type = qJsonObject.getInt("type");
@@ -155,29 +163,27 @@ public class PlayQuiz extends Base {
                     break;
                 }
             }
-            if (resp){
-                refreshScore(1);
-            } else {
-                refreshScore(0);
+            if (resp){ refreshScore(1);
+            } else { refreshScore(0);
             }
         }
         refreshScoreUI();
-        if (nbQ < 5) {
+        if (nbQ < 4) {
             nbQ++;
             playGame(nbQ);
         } else {
-            final Dialog endgamedialog = new Dialog(PlayQuiz.this,  R.style.hidetitle);
-            endgamedialog.setCancelable(false);
-            endgamedialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            endgamedialog.setContentView(R.layout.end_game);
-            endgamedialog.show();
-            TextView msgscore = endgamedialog.findViewById(R.id.msgscore);
-            TextView msg = endgamedialog.findViewById(R.id.msg);
+            final Dialog endGameDialog = new Dialog(PlayQuiz.this,  R.style.hidetitle);
+            endGameDialog.setCancelable(false);
+            endGameDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            endGameDialog.setContentView(R.layout.end_game);
+            endGameDialog.show();
+            TextView msgScore = endGameDialog.findViewById(R.id.msgscore);
+            TextView msg = endGameDialog.findViewById(R.id.msg);
 
-            LinearLayout TryLL = endgamedialog.findViewById(R.id.tryLL);
-            LinearLayout nextLevelLy = endgamedialog.findViewById(R.id.nextLevelLL);
+            LinearLayout TryLL = endGameDialog.findViewById(R.id.tryLL);
+            LinearLayout nextLevelLy = endGameDialog.findViewById(R.id.nextLevelLL);
 
-            msgscore.setText("SCORE FINALE : " + result() + "/" + 5);
+            msgScore.setText("SCORE FINALE : " + result() + "/" + 5);
 
             if (result() > 3) {
                 TryLL.setVisibility(View.GONE);
@@ -190,11 +196,11 @@ public class PlayQuiz extends Base {
                 msg.setText("Perdue !");
                 nextLevelLy.setVisibility(View.GONE);
             }
-            Button btnTry = endgamedialog.findViewById(R.id.btnTry);
+            Button btnTry = endGameDialog.findViewById(R.id.btnTry);
             btnTry.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    endgamedialog.dismiss();
+                    endGameDialog.dismiss();
                     finish();
                     Intent intent = new Intent(
                             getApplicationContext(),
@@ -203,11 +209,11 @@ public class PlayQuiz extends Base {
                     startActivity(intent);
                 }
             });
-            Button bnNextLevel = endgamedialog.findViewById(R.id.nextLevel);
+            Button bnNextLevel = endGameDialog.findViewById(R.id.nextLevel);
             bnNextLevel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    endgamedialog.dismiss();
+                    endGameDialog.dismiss();
                     finish();
                     Intent intent = new Intent(
                             getApplicationContext(),
@@ -216,12 +222,12 @@ public class PlayQuiz extends Base {
                     startActivity(intent);
                 }
             });
-            Button readMore = endgamedialog.findViewById(R.id.readMore);
+            Button readMore = endGameDialog.findViewById(R.id.readMore);
             readMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     finish();
-                    endgamedialog.dismiss();
+                    endGameDialog.dismiss();
                     Intent intent = new Intent(
                             getApplicationContext(),
                             ReadActivity.class);
@@ -236,11 +242,11 @@ public class PlayQuiz extends Base {
     }
 
     public void refreshScore(int val) {
-        if (nbQ == 1) { scoreQ1 = val; }
-        if (nbQ == 2) { scoreQ2 = val; }
-        if (nbQ == 3) { scoreQ3 = val; }
-        if (nbQ == 4) { scoreQ4 = val; }
-        if (nbQ == 5) { scoreQ5 = val; }
+        if (nbQ == 0) { scoreQ1 = val; }
+        if (nbQ == 1) { scoreQ2 = val; }
+        if (nbQ == 2) { scoreQ3 = val; }
+        if (nbQ == 3) { scoreQ4 = val; }
+        if (nbQ == 4) { scoreQ5 = val; }
     }
 
     public void refreshScoreUI() {
@@ -252,7 +258,6 @@ public class PlayQuiz extends Base {
     }
 
     public void updateScore(Button start, int scoreQ) {
-//        Toast.makeText(getApplicationContext(), "refreshScore : "+ nbQ, Toast.LENGTH_SHORT).show();
         if (scoreQ == 1){
             start.setBackgroundResource(R.drawable.bn_green);
         } else if (scoreQ == 0){

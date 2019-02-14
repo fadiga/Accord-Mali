@@ -1,15 +1,9 @@
 package ml.unicef.accord_droid;
 
-import android.app.Dialog;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.design.widget.TextInputEditText;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.github.barteksc.pdfviewer.PDFView;
 
@@ -23,7 +17,6 @@ public class ReadActivity extends Base {
     public float zoomValue = 1;
     public SharedPreferences sharedPrefs;
     public boolean readMode;
-    public TextInputEditText textSearch;
     private View modeButton;
 
     @Override
@@ -31,12 +24,10 @@ public class ReadActivity extends Base {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pdf_reader);
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        readMode = sharedPrefs.getBoolean(Constants.MODE_READ, true);
-
-        loadPDF(readMode);
+        loadPDF();
     }
 
-    public void loadPDF(Boolean modeRead) {
+    public void loadPDF() {
         String language = sharedPrefs.getString(Constants.LANGUAGE, "");
         pdfView = findViewById(R.id.pdfView);
         int pageRead = sharedPrefs.getInt(Constants.PAGE_NB, 0);
@@ -59,8 +50,7 @@ public class ReadActivity extends Base {
                 .password(null)
                 .scrollHandle(null)
                 .enableAntialiasing(true) // improve rendering a little bit on low-res screens
-                .nightMode(modeRead)
-                .enableAntialiasing(true)
+                .nightMode(readMode)
                 .pageSnap(true)
                 .load();
     }
@@ -84,28 +74,9 @@ public class ReadActivity extends Base {
         final SharedPreferences.Editor editor = sharedPrefs.edit();
         editor.putBoolean(Constants.MODE_READ, !readMode);
         editor.apply();
-        loadPDF(!readMode);
+        loadPDF();
     }
 
-//    public void searchInPage(View view){
-//
-//        final Dialog searchDialog = new Dialog(ReadActivity.this);
-//        searchDialog.setContentView(R.layout.reach_dialogue);
-////        settingdialog.setTitle("Paramètre de langue");
-//        searchDialog.show();
-//        readMode =  searchDialog.findViewById(R.id.bttSearch);
-//        readMode.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View arg0) {
-//                textSearch = searchDialog.findViewById(R.id.testSearch);
-//                Log.i(TAG, textSearch.getText().toString());
-////                pdfView.SearchText()
-//                pdfView.findViewWithTag(textSearch.getText().toString());
-//                searchDialog.dismiss();
-//
-//            }
-//        })
-//    }
 
     public void zoomIn(View view) {
         ++zoomValue;

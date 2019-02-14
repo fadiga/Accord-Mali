@@ -100,7 +100,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="#E6C99605">
-
                 <TextView
                     android:id="@+id/question_label"
                     android:layout_width="match_parent"
@@ -196,6 +195,7 @@
                 android:layout_gravity="center"
                 android:background="@drawable/button_play"
                 android:onClick="startEvaluation"
+                android:layout_marginBottom="10dp"
                 android:text="suivante" />
         </LinearLayout>
     </ScrollView>
