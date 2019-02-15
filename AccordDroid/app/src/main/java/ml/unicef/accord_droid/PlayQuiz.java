@@ -75,14 +75,14 @@ public class PlayQuiz extends Base {
 
     }
 
-    public ArrayList<Integer> makeQuestion(){
+    public ArrayList<Integer> makeQuestion() {
         ArrayList<Integer> number = new ArrayList<Integer>();
         for (int i = 1; i <= 5; ++i) number.add(i);
         Collections.shuffle(number);
         return number;
     }
 
-    public void  playGame (int nbQ){
+    public void  playGame (int nbQ) {
         //        Toast.makeText(getApplicationContext(), "nbQ : " + nbQ + "list_q.get(nbQ) " + list_q.get(nbQ), Toast.LENGTH_LONG).show();
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
@@ -177,6 +177,7 @@ public class PlayQuiz extends Base {
             endGameDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             endGameDialog.setContentView(R.layout.end_game);
             endGameDialog.show();
+
             TextView msgScore = endGameDialog.findViewById(R.id.msgscore);
             TextView msg = endGameDialog.findViewById(R.id.msg);
 
@@ -187,7 +188,6 @@ public class PlayQuiz extends Base {
 
             if (result() > 3) {
                 TryLL.setVisibility(View.GONE);
-
                 msg.setText("Felicitation !");
                 final SharedPreferences.Editor editor = sharedPrefs.edit();
                 editor.putInt(Constants.CURRENT_LEVEL, level + 1);
