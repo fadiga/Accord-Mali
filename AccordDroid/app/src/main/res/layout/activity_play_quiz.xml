@@ -8,28 +8,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@drawable/menu_game"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp">
         <LinearLayout
             android:id="@+id/level_l"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight=".50"
-            android:orientation="horizontal">
+            android:background="@drawable/menu_game"
+            android:layout_weight=".30"
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LEVEL"
+                android:gravity="center"
+                android:textStyle="bold" />
             <TextView
                 android:id="@+id/level_v"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:text="LEVEL X"
-                android:textSize="30sp"
-                android:textStyle="bold|italic" />
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:gravity="center"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight=".0"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -38,7 +47,6 @@
                 android:layout_height="wrap_content"
                 app:fontFamily="sans-serif-smallcaps"
                 android:text="SCORE"
-                android:textSize="24sp"
                 android:textStyle="bold"/>
 
             <LinearLayout
@@ -95,23 +103,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="#E6C99605">
+                android:layout_height="110dp"
+                android:layout_margin="1dp"
+                android:background="#fff">
                 <TextView
                     android:id="@+id/question_label"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:layout_marginBottom="20dp"
                     android:text="Question ?"
                     android:fontFamily="sans-serif-medium"
-
-                    android:textColor="#fff"
-                    android:textSize="20dp"
-                    android:padding="5dp"
+                    android:textColor="#037208"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -119,43 +123,60 @@
                 android:id="@+id/checkBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
                 android:orientation="vertical">
+
 
                 <CheckBox
                     android:id="@+id/ch1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/radio_peace"
                     android:text="A" />
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
                 <CheckBox
                     android:id="@+id/ch2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/radio_peace"
                     android:text="B" />
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
                 <CheckBox
                     android:id="@+id/ch3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/radio_peace"
                     android:text="C" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
 
                 <CheckBox
                     android:id="@+id/ch4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/radio_peace"
                     android:text="D" />
+
             </LinearLayout>
 
             <RadioGroup
                 android:id="@+id/radio_group"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
                 android:orientation="vertical">
 
                 <RadioButton
@@ -164,6 +185,10 @@
                     android:layout_height="wrap_content"
                     style="@style/radio_peace"
                     android:text="A" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
 
                 <RadioButton
                     android:id="@+id/rsp2"
@@ -171,17 +196,27 @@
                     android:layout_height="wrap_content"
                     style="@style/radio_peace"
                     android:text="B" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
 
                 <RadioButton
                     android:id="@+id/rsp3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/radio_peace"
                     android:text="C" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
 
                 <RadioButton
                     android:id="@+id/rsp4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/radio_peace"
                     android:text="D" />
@@ -189,7 +224,6 @@
 
             <Button
                 android:id="@+id/evaluate"
-                style="@style/Widget.AppCompat.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

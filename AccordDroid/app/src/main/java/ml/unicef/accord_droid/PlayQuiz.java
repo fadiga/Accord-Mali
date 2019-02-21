@@ -68,7 +68,7 @@ public class PlayQuiz extends Base {
         start3 = findViewById(R.id.start3);
         start4 = findViewById(R.id.start4);
         start5 = findViewById(R.id.start5);
-        levelV.setText("LEVEL " + level);
+        levelV.setText("" + level);
 
         list_q =  makeQuestion();
         playGame(nbQ);

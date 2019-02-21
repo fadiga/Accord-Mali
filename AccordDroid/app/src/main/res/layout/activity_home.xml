@@ -40,8 +40,7 @@
                 android:shadowRadius="2"
                 android:text="@string/title"
                 android:textAlignment="center"
-                android:textColor="#fff"
-                android:textSize="24sp" />
+                android:textColor="#fff"/>
         </LinearLayout>
 
         <LinearLayout

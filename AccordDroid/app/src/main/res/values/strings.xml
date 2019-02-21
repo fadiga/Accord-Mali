@@ -15,7 +15,8 @@
     <string name="required_connexion_title">Connexion requise</string>
     <string name="required_connexion_body">Cette action nécessite une connexion à Internet. Activez les données ou le WiFi puis réessayez.</string>
     <string name="required_connexion_cancel">Annuler</string>
-    <string name="required_connexion_retry">Réessayer</string><string name="about_long_description">
+    <string name="required_connexion_retry">Réessayer</string>
+    <string name="about_long_description">
         <![CDATA[
             <h4>INTRODUCTION</h4>
             <p>L’accord de paix et de réconciliation au Mali a été signé en 2015 par le représentant du gouvernement malien et les mouvements politico-militaires du nord du Mali.</p>
