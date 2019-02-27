@@ -185,10 +185,10 @@
       "label":"Comment assurer une meilleure représentation des populations au sein des institutions de l’Etat ?"
     },
     "Q5":{
-      "responses":1,
-      "choises":["Un comité de suivi de l’Accord (CSA) sera créé. Il sera composé de représentants du Gouvernement du Mali, des Mouvements signataires de l’Accord et de la Médiation","La création d’un conseil Nation pour la RSS","Progressivité du redéploiement des forces armées et de sécurités reconstituées du Mali ","Veiller à une meilleure représentation des populations du Nord du Mali dans les Institutions et grands services publics, corps et administration de la république"],
+      "responses":3,
+      "choises":["Kidal"," Gao ","Bamako","Kayes"],
       "type":1,
-      "label":"Qu’est ce qui est prévu pour le suivi de la mise en œuvre de l’accord ?"
+      "label":"Dans quel region du Mali siège le comité de suivi de l'Accord d'Alger ?"
     }
   }]
 }
