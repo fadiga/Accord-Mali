@@ -32,6 +32,30 @@
             android:fontFamily="serif-monospace"/>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/endLevelLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight=".50">
+        <TextView
+            android:id="@+id/msg_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif-monospace"
+            android:text="END GAME"
+            android:textColor="#ffffff"
+            android:textSize="24sp" />
+        <Button
+            android:id="@+id/endLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_exit"
+            android:layout_gravity="center"
+            android:text=""/>
+
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/nextLevelLL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

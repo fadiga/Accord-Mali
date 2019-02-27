@@ -19,8 +19,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import org.json.JSONObject;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -64,7 +62,7 @@ public class Base extends Activity {
 
         final Dialog settingdialog = new Dialog(Base.this, R.style.hidetitle);
 
-        settingdialog.setContentView(R.layout.add_preference);
+        settingdialog.setContentView(R.layout.preference);
         settingdialog.setCancelable(false);
         settingdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         settingdialog.setTitle("Paramètre de langue");

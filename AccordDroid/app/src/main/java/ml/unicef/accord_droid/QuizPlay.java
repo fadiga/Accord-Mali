@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+//import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -14,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,9 +24,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class PlayQuiz extends Base {
+public class QuizPlay extends Base {
 
-    private static final String TAG = Constants.getLogTag("PlayQuiz");
+    private static final String TAG = Constants.getLogTag("QuizPlay");
     private int level;
     private int type;
     private RadioButton rsp1;
@@ -58,7 +58,7 @@ public class PlayQuiz extends Base {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_play_quiz);
+        setContentView(R.layout.quiz_play);
         Bundle extras = getIntent().getExtras();
         level = extras.getInt(Constants.LEVEL);
         TextView levelV = findViewById(R.id.level_v);
@@ -131,7 +131,6 @@ public class PlayQuiz extends Base {
 
 
     private void evaluateGuiCheck() throws JSONException {
-
         if (type == Constants.QTUPE1) {
             int response = qJsonObject.getInt("responses");
             int ch = -1;
@@ -172,30 +171,49 @@ public class PlayQuiz extends Base {
             nbQ++;
             playGame(nbQ);
         } else {
-            final Dialog endGameDialog = new Dialog(PlayQuiz.this,  R.style.hidetitle);
+            final Dialog endGameDialog = new Dialog(QuizPlay.this,  R.style.hidetitle);
             endGameDialog.setCancelable(false);
             endGameDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            endGameDialog.setContentView(R.layout.end_game);
+            endGameDialog.setContentView(R.layout.quiz_end);
             endGameDialog.show();
 
             TextView msgScore = endGameDialog.findViewById(R.id.msgscore);
             TextView msg = endGameDialog.findViewById(R.id.msg);
+            TextView msg_end = endGameDialog.findViewById(R.id.msg_end);
 
-            LinearLayout TryLL = endGameDialog.findViewById(R.id.tryLL);
+            LinearLayout tryLL = endGameDialog.findViewById(R.id.tryLL);
             LinearLayout nextLevelLy = endGameDialog.findViewById(R.id.nextLevelLL);
+            LinearLayout endLevelLL = endGameDialog.findViewById(R.id.endLevelLL);
 
             msgScore.setText("SCORE FINALE : " + result() + "/" + 5);
 
+            endLevelLL.setVisibility(View.GONE);
+            tryLL.setVisibility(View.GONE);
+            nextLevelLy.setVisibility(View.GONE);
+
             if (result() > 3) {
-                TryLL.setVisibility(View.GONE);
-                msg.setText("Felicitation !");
-                final SharedPreferences.Editor editor = sharedPrefs.edit();
-                editor.putInt(Constants.CURRENT_LEVEL, level + 1);
-                editor.apply();
+                if (level < 6) {
+                    msg.setText("Felicitation !");
+                    nextLevelLy.setVisibility(View.VISIBLE);
+                    final SharedPreferences.Editor editor = sharedPrefs.edit();
+                    editor.putInt(Constants.CURRENT_LEVEL, level + 1);
+                    editor.apply();
+                } else {
+                    msg_end.setText("Fin de la partie !");
+                    endLevelLL.setVisibility(View.VISIBLE);
+                }
             } else {
                 msg.setText("Perdue !");
-                nextLevelLy.setVisibility(View.GONE);
+                tryLL.setVisibility(View.VISIBLE);
             }
+            Button endLevel = endGameDialog.findViewById(R.id.endLevel);
+            endLevel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    endGameDialog.dismiss();
+                    finish();
+                }
+            });
             Button btnTry = endGameDialog.findViewById(R.id.btnTry);
             btnTry.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -204,7 +222,7 @@ public class PlayQuiz extends Base {
                     finish();
                     Intent intent = new Intent(
                             getApplicationContext(),
-                            PlayQuiz.class);
+                            QuizPlay.class);
                     intent.putExtra(Constants.LEVEL, level);
                     startActivity(intent);
                 }
@@ -217,7 +235,7 @@ public class PlayQuiz extends Base {
                     finish();
                     Intent intent = new Intent(
                             getApplicationContext(),
-                            PlayQuiz.class);
+                            QuizPlay.class);
                     intent.putExtra(Constants.LEVEL, level + 1);
                     startActivity(intent);
                 }

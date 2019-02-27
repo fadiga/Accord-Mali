@@ -1,195 +1,194 @@
-{"l1" : [{
-  "Q1": {
-    "responses": [true, true, true, false],
-    "choises": ["Les parties signataires ", "La médiation internationale", "La société civile", "Union Européenne"],
-    "type": 2,
-    "label": "Qui était à la table des négociations ?"
-  },
-  "Q2": {
-    "responses": 1,
-    "choises": ["Le Gouvernement de la République du Mali", "L’union Africaine ", "La MISNUSMA", "o	La France"],
-    "type": 1,
-    "label": "Quelles sont les parties signataires  ?"
-  },
-  "Q3": {
-    "responses": [true, true, false, false],
-    "choises": [" Le respect de l’unité nationale, de l’intégrité territoriale, de la souveraineté de l’Etat du Mali ainsi que sa forme républicaine et son caractère laïc ", " La lutte contre le terrorisme, le trafic de drogue et les autres formes de criminalité transnationale organisée", "L’ouverture du Haut Conseil des Collectivité Territoriales pour, à court terme, élargir ses membres aux représentants des notabilités traditionnelles, des femmes et des jeunes, et, sur le long terme, réactiver et diligenter le processus de mise en place de la deuxième chambre du parlement ", "L’amélioration de la représentation des populations du nord à l’Assemblé National par l’augmentation du nombre de circonscription électorales et/ou toutes autres mesures appropriées"],
-    "type": 2,
-    "label": "Quels sont les principes de base de l’accord  ?"
-  },
-  "Q4": {
-    "responses": 1,
-    "choises": ["Les États- Unis d’Amérique", "L’Union Européenne (UE)", "L’Organisation de la Coopération Islamique (OCI)", "o	Niger"],
-    "type": 1,
-    "label": "Quels sont les observateurs présents à l’Accord D’Alger ?"
-  },
-  "Q5": {
-    "responses": [false, true, true, true],
-    "choises": ["La promotion d’un développement équilibré de toutes les régions du Mali", "La question de l’Azawad sera définitivement tranchée par une approche maliano-malienne inclusive lors d’une conférence d’entente nationale, qui aura pour objectif, entre autres, l’Analyse des causes profondes des crises cycliques que le Mali a connues dans sa partie septentrionale", "La prise en charge par les populations de la gestion effective de leurs propres affaires", "Le rejet de la violence comme moyen d’expression politique et le recours au dialogue et à la concertation pour le règlement des différends "],
-    "type": 2,
-    "label": "Qu’en est-il de l’application AZWAD  ?"
-  },
-}],
-  "l2" : [{
+{
+  "l1":[{
     "Q1": {
-      "responses": [false, false, true, true],
-      "choises": ["Veiller à une meilleure représentation des populations du Nord du Mali dans les Institutions et grands services publics, corps et administration de la république", "La création d’un conseil Nation pour la RSS", "L’octroi de sièges aux représentants des notabilités traditionnelles, des femmes et des jeunes au sein de Haut Conseil des Collectivité Territoriales ", "L’augmentation du nombre de circonscription électorales et/ ou toutes autres mesures appropriées afin d’amélioré la représentation des populations du Nord du Mali à l’Assemblé Nationale "],
-      "type": 2,
-      "label": "Comment assurer une meilleure représentation des populations au sein des Institutions de l’Etat  ?"
+      "responses":[true, true, true, false],
+      "choises": ["Les parties signataires ", "La médiation internationale", "La société civile", "Union Européenne"],
+      "type":2,
+      "label": "Qui était à la table des négociations ?"
     },
     "Q2": {
-      "responses": 3,
+      "responses":1,
+      "choises": ["Le Gouvernement de la République du Mali", "L’union Africaine ", "La MISNUSMA", "La France"],
+      "type":1,
+      "label": "Quelles sont les parties signataires ?"
+    },
+    "Q3": {
+      "responses":[true, true, false, false],
+      "choises": [" Le respect de l’unité nationale, de l’intégrité territoriale, de la souveraineté de l’Etat du Mali ainsi que sa forme républicaine et son caractère laïc ", " La lutte contre le terrorisme, le trafic de drogue et les autres formes de criminalité transnationale organisée", "L’ouverture du Haut Conseil des Collectivité Territoriales pour, à court terme, élargir ses membres aux représentants des notabilités traditionnelles, des femmes et des jeunes, et, sur le long terme, réactiver et diligenter le processus de mise en place de la deuxième chambre du parlement ", "L’amélioration de la représentation des populations du nord à l’Assemblé National par l’augmentation du nombre de circonscription électorales et/ou toutes autres mesures appropriées"],
+      "type":2,
+      "label": "Quels sont les principes de base de l’accord ?"
+    },
+    "Q4": {
+      "responses":[true, false, false, true],
+      "choises": ["Les États- Unis d’Amérique", "L’Union Européenne (UE)", "L’Organisation de la Coopération Islamique (OCI)", "La France"],
+      "type":2,
+      "label": "Quels sont les observateurs présents à l’Accord D’Alger ?"
+    },
+    "Q5": {
+      "responses":2,
+      "choises": ["La promotion d’un développement équilibré de toutes les régions du Mali", "La question de l’Azawad sera définitivement tranchée par une approche maliano-malienne inclusive lors d’une conférence d’entente nationale, qui aura pour objectif, entre autres, l’Analyse des causes profondes des crises cycliques que le Mali a connues dans sa partie septentrionale", "La prise en charge par les populations de la gestion effective de leurs propres affaires", "Le rejet de la violence comme moyen d’expression politique et le recours au dialogue et à la concertation pour le règlement des différends "],
+      "type":1,
+      "label": "Qu’en est-il de l’application AZAWAD ?"
+    }
+  }],
+  "l2":[{
+    "Q1": {
+      "responses":[false, false, true, true],
+      "choises": ["Veiller à une meilleure représentation des populations du Nord du Mali dans les Institutions et grands services publics, corps et administration de la république", "La création d’un conseil Nation pour la RSS", "L’octroi de sièges aux représentants des notabilités traditionnelles, des femmes et des jeunes au sein de Haut Conseil des Collectivité Territoriales ", "L’augmentation du nombre de circonscription électorales et/ ou toutes autres mesures appropriées afin d’amélioré la représentation des populations du Nord du Mali à l’Assemblé Nationale "],
+      "type":2,
+      "label": "Comment assurer une meilleure représentation des populations au sein des Institutions de l’Etat ?"
+    },
+    "Q2": {
+      "responses":3,
       "choises": ["La médiation internationale", "L’amélioration de la représentation des populations du nord à l’Assemblé National par l’augmentation du nombre de circonscription électorales et/ou toutes autres mesures appropriées", "Le renforcement de la décentralisation à travers le mode de scrutin, l’élargissement des compétences et responsabilité des collectivités territoriales, assorti d’un réaménagement de la tutelle, le transfert effectif des ressources", "L’octroi de sièges aux représentants des notabilités"],
-      "type": 1,
-      "label": "Que prévoit l’Accord sur le plan institutionnel?"
+      "type":1,
+      "label": "Que prévoit l’Accord sur le plan institutionnel ?"
     },
     "Q3": {
       "responses":[false, true, true, true],
       "choises": ["La création d’une Commission d’intégration par décret présidentiel qui comprendra des représentants des forces armées et de sécurité, la coordination et de la plateforme ", "Inclusivité et représentation significative de toutes les populations du Mali au sein des forces armées et de sécurité ", "Unicité des forces armées et de sécurité du Mali relevant organiquement et hiérarchiquement de l’Etat central ", "Progressivité du redéploiement des forces armées et de sécurités reconstituées du Mali "],
-      "type": 1,
+      "type":2,
       "label": "Quels sont les principes pour la réhabilitation du système défense ?"
     },
     "Q4": {
-      "responses": 4,
+      "responses":4,
       "choises": ["La soumission par les mouvements armés, à la Technique de sécurité (CTS) des listes définitives et certifiées de leurs armements dans les 30 jours suivant la signature de l’Accord ", "La commission d’Intégration, en coordination avec le Conseil National pour la RSS, formulera des propositions sur les modalités d’attribution des grandes et de reclassement", "Progressivité du redéploiement des forces armées et de sécurités reconstituées du Mali ", "Le redéploiement des forces armées et de sécurité reconstituée se fera de manière progressive dans les régions du Nord à compter de la date de signature de l’Accord. Ces forces devront inclure un nombre significatif de personnes originaires des régions du Nord, y compris dans le commandement, de façon à conforter le retour de la confiance et faciliter la sécurisation progressive de ces régions"],
-      "type": 1,
+      "type":1,
       "label": "Comment s’opère le retour de l’armée dans le nord ?"
     },
     "Q5": {
       "responses":[false, true, true, true] ,
       "choises": ["Le président de l’Assemblé Régionale est élu au suffrage universel direct", "Des comités Consultatifs Locaux de sécurité (CCLS) vont être créés au niveau régional (en priorité) et au niveau communal", "Ils regroupent les représentants de l’Etat, les autorités régionales et locales et les représentants des communautés et autorité traditionnelles sous l’autorité du chef de l’exécutif local", "Ces comités permettront aux citoyens de participer à leur propre sécurité en donnant des avis et conseils aux autorités en charge de la sécurité"],
-      "type": 1,
+      "type":2,
       "label": "Les populations sont-elles impliquées dans le dispositif de sécurité ?"
-    },
+    }
   }],
   "l3":[{
     "Q1":{
       "responses":4,
       "choises":["Progressivité du redéploiement des forces armées et de sécurités reconstituées du Mali ","Ces comités permettront aux citoyens de participer à leur propre sécurité en donnant des avis et conseils aux autorités en charge de la sécurité","Le transfert effectif des ressources ","L’Accord stipule que deux ou plusieurs régions, conformément à la loi, peuvent mettre en place des instances appropriées, afin de promouvoir leur développement économique et social, dans la limite de leurs compétences "],
-      "type":2,
+      "type":1,
       "label":"Que faut-il entendre par Zone de développement des régions du Nord ?"
     },
     "Q2":{
       "responses":[true,true,true,false],
       "choises":["La stratégie spécifique de développement pour la zone sera mise en œuvre sur une période de 10 à 15ans, afin de hisser les religions du Nord au même niveau de développement que le reste du pays ","Ladite zone de développement bénéficiera de façon prioritaire des dispositifs de soutien de l’Etat prévus dans l’Accord","Il sera élaboré une stratégie spécifique de développement pour la zone, qui sera mise en œuvre à travers un fonds pour le développement durable ","Inclusivité et représentation significative de toutes les populations du Mali au sein des forces armées et de sécurité "],
-      "type":1,
-      "label":"Comment mobiliser les ressources pour la Zone de développement des régions du Nord? "
+      "type":2,
+      "label":"Comment mobiliser les ressources pour la Zone de développement des régions du Nord ?"
     },
     "Q3":{
      "responses":1,
       "choises":["Il sera procédé à la création d’une police placée sous l’autorité des collectivités territoriales, dans le cadre de leur pouvoir de police","L’Accord stipule que deux ou plusieurs régions, conformément à la loi, peuvent mettre en place des instances appropriées, afin de promouvoir leur développement économique et social, dans la limite de leurs compétences ","La relance des évènements culturels, des semaines nationales des biennales artistiques et culturelles et des festivals","Ces comités permettront aux citoyens de participer à leur propre sécurité en donnant des avis et conseils aux autorités en charge de la sécurité"],
-      "type":2,
-      "label":"Qu’en est-il de la police territoriale  ?"
+      "type":1,
+      "label":"Qu’en est-il de la police territoriale ?"
     },
     "Q4":{
       "responses":[false,false,true,true],
       "choises":["Il est prévu la tenue d’une conférence d’appel des fonds pour ma mise en place du fond pour le développement durable, outil de financement de la stratégie  Ladite zone de développement bénéficiera de façon prioritaire des dispositifs de soutien de l’État prévus dans l’Accord.","Il est prévu la tenue d’une conférence d’appel des fonds pour ma mise en place du fond pour le développement durable, outil de financement de la stratégie ","La construction d’un hôpital régionale à Kidal et à Ménaka.","La réalisation des aéroports"],
-      "type":1,
-      "lable":"Quelles sont les Actions Majeures de développement en matière d’infrastructure à moyen et à long terme ? "
+      "type":2,
+      "label":"Quelles sont les Actions Majeures de développement en matière d’infrastructure à moyen et à long terme ?"
     },
     "Q5":{
      "responses":3,
       "choises":["Il est prévu de promouvoir une formation de qualité pour les acteurs de la justice, prenant en compte les besoins spécifiques des cadis","La relance des évènements culturels, des semaines nationales des biennales artistiques et culturelles et des festivals","La période intérimaire indique l’échéance de mise en œuvre des mesures transitoires à exécuter dans le court terme. L’application de l’Accord demande des préalables, notamment des mesures de confiance, pour préparer, mettre en place, organiser et effectuer divers réglages, qui concourent à sa mise en œuvre","D’observer le cessez-le-feu entre les parties"],
-      "type":2,
-      "label":"Pourquoi une Période intérimaire ? "
-    },
+      "type":1,
+      "label":"Pourquoi une Période intérimaire ?"
+    }
   }],
   "l4":[{
     "Q1":{
       "responses":[true,true,true,false],
       "choises":["Kidal","Taoudénie","Métnaka","Douentza "],
-      "type":1,
-      "label":"Quels sont les régions bénéficière d’Aéroport ? "
+      "type":2,
+      "label":"Quels sont les régions bénéficière d’Aéroport ?"
     },
     "Q2":{
       "responses":2,
       "choises":["Il est prévu de promouvoir une formation de qualité pour les acteurs de la justice, prenant en compte les besoins spécifiques des cadis","Chargé de planifier et de conduire ces patrouilles incluant des éléments des forces armés et de sécurité maliennes et éléments de la Coordination et de la plateforme","D’observer le cessez-le-feu entre les parties","D’enquêter sur d’éventuelles violations du cessez-le-feu"],
-      "type":2,
-      "label":"Quelles sont les tâches effectuées par le Mécanisme Opérationnel de Coordination (MOC) ? "
+      "type":1,
+      "label":"Quelles sont les tâches effectuées par le Mécanisme Opérationnel de Coordination (MOC) ?"
     },
     "Q3":{
       "responses":[true,true,true,false],
       "choises":["La commission Technique de Sécurité","Création des équipes Mixtes d’observation et de vérification","Mise en place du Mécanisme Opérationnel de Coordination (MOC) et des patrouilles mixtes","La bonne gestion du retour des réfugiés et des déplacés et leurs réinsertions "],
-      "type":1,
-      "label":"Quelles sont les mesures prévues en matière de défense et de sécurité pendant la période intérimaire ? "
+      "type":2,
+      "label":"Quelles sont les mesures prévues en matière de défense et de sécurité pendant la période intérimaire ?"
     },
     "Q4":{
       "responses":4,
       "choises":["40 jours","20 jours","46 jours","60 jours"],
-      "type":2,
-      "label":"quel nombre de jours a été prévu pour la mise en place d’une commission suite à l’Accord d’Alger? "
+      "type":1,
+      "label":"Quel nombre de jours a été prévu pour la mise en place d’une commission suite à l’Accord d’Alger ?"
     },
     "Q5":{
       "responses":[false,false,true,true],
       "choises":["De mettre à jour les arrangements sécuritaires et les vérifier","La médiation, sous l’égide de l’Algérie en tant que chef de file, est le garant politique de l’Accord","D’observer le cessez-le-feu entre les parties","D’enquêter sur d’éventuelles violations du cessez-le-feu"],
-      "type":1,
-      "label":"Quel est le rôle prévu par la commission Technique en matière de défense et de sécurité lors de la période intérimaire ? "
-
+      "type":2,
+      "label":"Quel est le rôle prévu par la commission Technique en matière de défense et de sécurité lors de la période intérimaire ?"
     }
   }],
   "l5":[{
     "Q1":{
       "responses":[true,true,false,true],
       "choises":["La médiation, sous l’égide de l’Algérie en tant que chef de file, est le garant politique de l’Accord","La communauté internationale est garante de la mise en œuvre scrupuleuse du présent accord et est engagée à accompagner les efforts déployés à cet effet  "," La relance des évènements culturels, des semaines nationales des biennales artistiques et culturelles et des festivals","La sincérité, la bonne foi et l’engagement des parties à assumer le contenu de l’accord, dans l’intérêt de la réconciliation, paix et sécurité et de la stabilité du Mali et de la région "],
-      "type":1,
-      "label":"Qu’est ce qui garantit cet accord pour la paix et la réconciliation ?",
-
+      "type":2,
+      "label":"Qu’est ce qui garantit cet accord pour la paix et la réconciliation ?"
     },
     "Q2":{
       "responses":3,
       "choises":["La mise en place de mécanismes de justice transitionnelle, notamment par l’opérationnalisation de la commission vérité, justice et Réconciliation (CVJR) ","L’élaboration d’une charte Nationale pour la Paix, l’Unité et la Réconciliations Nationale ","Les parties signataires demandent à la classe politique et à la société civile, notamment les organisations de femmes et de jeunes, les medias, les communicateurs traditionnels et les autorités traditionnelles et religieuses, d’apporter leur plein concours à la réalisation des objectifs de l’Accord","La valorisation du statut des autorités traditionnelles "],
-      "type":2,
-      "label":"Quels sera le rôle des partis politique et de la société civile ? "
+      "type":1,
+      "label":"Quels sera le rôle des partis politique et de la société civile ?"
     },
     "Q3":{
       "responses":[true,true,true,false],
       "choises":[" Défense et de sécurité","Développement économique. Social et culturel","Réconciliation, justice et questions humanitaires","De soutenir techniquement le processus d’intégration des ex-combattants"],
-      "type":1,
-      "label":"Sélectionnez les sous-comités créés parmi ces éléments ? "
+      "type":2,
+      "label":"Sélectionnez les sous-comités créés parmi ces éléments ?"
     },
     "Q4":{
       "responses":2,
       "choises":["20 sous-comités","4 sous-comités","7 sous-comités","13 Sous- comités"],
-      "type":2,
-      "label":"Le comité de suivi de l’Accord sera structuré en combien sous-comités ? "
+      "type":1,
+      "label":"Le comité de suivi de l’Accord sera structuré en combien sous-comités ?"
     },
     "Q5":{
     "responses":[true,true,true,false],
       "choises":["Défense et de sécurité"," Développement économique. Social et culturel","Réconciliation, justice et questions humanitaires","De soutenir techniquement le processus d’intégration des ex-combattants"],
-      "type":1,
-      "label":"Sélectionnez les sous-comités créés parmi ces éléments ? "
+      "type":2,
+      "label":"Sélectionnez les sous-comités créés parmi ces éléments ?"
   }
   }],
   "l6":[{
     "Q1":{
       "responses":3,
       "choises":["La revalorisation du rôle des cadis dans l’administration de la justice, notamment en ce qui concerne la médiation civile","L’élaboration d’une charte Nationale pour la Paix, l’Unité et la Réconciliations Nationale ","Le comité de suivi de l’accord désigne un observateur indépendant chargé d’évaluer de manière objective l’Etat de mise en œuvre de l’Accord. Il rend public tous les quatre mois un rapport exhaustif faisant le point de l’exécution des engagements","La bonne gestion du retour des réfugiés et des déplacés et leurs réinsertions"],
-      "type":2,
-      "label":"Quel est le rôle de l’observateur indépendant ? "
+      "type":1,
+      "label":"Quel est le rôle de l’observateur indépendant ?"
     },
     "Q2":{
       "responses":[true,true,true,false],
       "choises":["La construction d’un hôpital régionale à Kidal et à Ménaka","La réalisation des aéroports","Les axes routiers ","La société civile (en audition)"],
-      "type":1,
-      "label":"Quelles sont les Actions Majeures de développement en matière d’infrastructure à moyen et à long terme ? "
+      "type":2,
+      "label":"Quelles sont les Actions Majeures de développement en matière d’infrastructure à moyen et à long terme ?"
     },
     "Q3":{
       "responses":1,
       "choises":["Un comité de suivi de l’Accord (CSA) sera créé. Il sera composé de représentants du Gouvernement du Mali, des Mouvements signataires de l’Accord et de la Médiation","Veiller à une meilleure représentation des populations du Nord du Mali dans les Institutions et grands services publics, corps et administration de la république","La création d’un conseil Nation pour la RSS","Progressivité du redéploiement des forces armées et de sécurités reconstituées du Mali "],
-      "type":2,
-      "label":"Qu’est ce qui est prévu pour le suivi de la mise en œuvre de l’accord ? "
+      "type":1,
+      "label":"Qu’est ce qui est prévu pour le suivi de la mise en œuvre de l’accord ?"
     },
     "Q4":{
       "responses":[true,true,false,false],
       "choises":["L’augmentation du nombre de circonscription électorales et/ ou toutes autres mesures appropriées afin d’amélioré la représentation des populations du Nord du Mali à l’Assemblé Nationale ","L’octroi de sièges aux représentants des notabilités traditionnelles, des femmes et des jeunes au sein de Haut Conseil des Collectivité Territoriales","La création d’un conseil Nation pour la RSS","Progressivité du redéploiement des forces armées et de sécurités reconstituées du Mali "],
-      "type":1,
-      "label":"Comment assurer une meilleure représentation des populations au sein des institutions de l’Etat ? "
+      "type":2,
+      "label":"Comment assurer une meilleure représentation des populations au sein des institutions de l’Etat ?"
     },
     "Q5":{
       "responses":1,
       "choises":["Un comité de suivi de l’Accord (CSA) sera créé. Il sera composé de représentants du Gouvernement du Mali, des Mouvements signataires de l’Accord et de la Médiation","La création d’un conseil Nation pour la RSS","Progressivité du redéploiement des forces armées et de sécurités reconstituées du Mali ","Veiller à une meilleure représentation des populations du Nord du Mali dans les Institutions et grands services publics, corps et administration de la république"],
-      "tyoe":2,
-      "label":"Qu’est ce qui est prévu pour le suivi de la mise en œuvre de l’accord ? "
+      "type":1,
+      "label":"Qu’est ce qui est prévu pour le suivi de la mise en œuvre de l’accord ?"
     }
-}]
+  }]
 }

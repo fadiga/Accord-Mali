@@ -30,7 +30,7 @@
             android:name=".News"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PlayQuiz"
+            android:name=".QuizPlay"
             android:screenOrientation="portrait" />
     </application>
 

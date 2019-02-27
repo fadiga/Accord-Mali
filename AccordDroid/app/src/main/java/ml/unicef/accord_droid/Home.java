@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class Home extends Base {
 
@@ -19,7 +18,7 @@ public class Home extends Base {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.home);
         Log.d(TAG, "onCreate Home");
 
         settingButton = findViewById(R.id.setting);

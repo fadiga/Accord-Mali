@@ -10,6 +10,8 @@ public class Constants {
     public static final String CURRENT_LEVEL = "current_level";
     public static final String SONG = "song_on";
     public static final String LEVEL = "level";
+    public static final String share = "https://play.google.com/store/apps/details?id=fadcorp.mprice";
+
     static String MODE_READ = "read_mode";
     static String l1 = "Français";
     static String l3 = "Bambara";

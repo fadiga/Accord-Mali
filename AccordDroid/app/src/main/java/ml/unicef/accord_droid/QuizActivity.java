@@ -11,6 +11,7 @@ public class QuizActivity extends Base {
 
     private static final String TAG = Constants.getLogTag("QuizActivity");
     private boolean song;
+    Button share;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,20 @@ public class QuizActivity extends Base {
         Button level6 = findViewById(R.id.level6);
         check_level(6, level6);
 
+        share = findViewById(R.id.share);
+        share.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                        sharingIntent.setType("text/plain");
+                        String shareBody = Constants.share;
+                        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, R.string.app_name);
+                        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                        startActivity(Intent.createChooser(sharingIntent, "Partager ..."));
+                    }
+                }
+        );
         }
         public void check_level(final int el, Button level){
 
@@ -79,7 +94,7 @@ public class QuizActivity extends Base {
                 level.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(), PlayQuiz.class);
+                        Intent intent = new Intent(getApplicationContext(), QuizPlay.class);
                         intent.putExtra(Constants.LEVEL, el);
                         startActivity(intent);
                     }
