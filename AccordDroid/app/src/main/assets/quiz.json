@@ -10,7 +10,7 @@
       "responses":1,
       "choises": ["Le Gouvernement de la République du Mali", "L’union Africaine ", "La MISNUSMA", "La France"],
       "type":1,
-      "label": "Quelles sont les parties signataires ?"
+      "label": "Quel est la partie signataire lors de  l'Accord d'Alger ?"
     },
     "Q3": {
       "responses":[true, true, false, false],
